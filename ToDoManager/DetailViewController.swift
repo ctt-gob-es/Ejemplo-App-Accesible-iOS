@@ -10,16 +10,23 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var priorityLabel: UILabel!
+    
+    @IBOutlet weak var statusLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var deadlineLabel: UILabel!
+    
+    @IBOutlet weak var completionLabel: UILabel!
+    
+    @IBOutlet weak var completionSlider: UISlider!
+    
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
+
     }
 
     override func viewDidLoad() {
