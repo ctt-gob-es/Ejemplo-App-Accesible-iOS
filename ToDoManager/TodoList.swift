@@ -20,16 +20,17 @@ class Task {
     var deadline: Date?
     var status: TaskStatus = PendingTask()
     
-    init(?name: String, details: String, priority: Int, complex: Bool, deadline: Date) {
+    init?(name: String, details: String, priority: Int, complex: Bool, deadline: Date?) {
         id = 0
-        if (name == nil | name == nil) return nil
+        if name.isEmpty {
+            return nil
+        }
             self.name = name
-        if (details == nil) return nil
         self.details = details
-        if (priority == nil) return nil
-        if (priority != Task.HIGH_PRIORITY & priority != Task.MEDIUM_PRIORITY & priority != Task.LOW_PRIORITY) return nil
+        if (priority != Task.HIGH_PRIORITY && priority != Task.MEDIUM_PRIORITY && priority != Task.LOW_PRIORITY) {
+            return nil
+        }
         self.priority = priority
-        if (complex == nil) return nil
         self.complex = complex
         completed = 0
         self.deadline = deadline
@@ -103,27 +104,27 @@ class TaskList {
     var tasks = [Int: Task]()
     var list = [Task]()
     
-    func getTask(id: Int) -> Task {
+    func getTask(id: Int) -> Task? {
         return tasks[id]
     }
     
-    func addTask(task: Task) {
+    func addTask(_ task: Task) {
         task.id = taskCount
         tasks[task.id] = task
         list.append(task)
-        taskCount = taskCount + 1
+        taskCount += 1
     }
     
     func fillDefault() {
-        var t1 = Task("Pasear al perro", "Sacar al perro a pasear antes de desayunar.", Task.MEDIUM_PRIORITY,
- false, nil)
-        var t2 = Task("Estudiar para examen", "Estudiar para el esxamen de historia de la semana que viene.", Task.HIGH_PRIORITY, true, Date(timeIntervalSinceNow: 600000))
-        var t3 Task("Regalo Ana", "Comprar el regalo de cumpleaños para Ana.", Task.MEDIUM_PRIORITY, false, Date(timeIntervalSinceNow: 900000)
-        var t4 = Task("Star wars", "Ir a ver Star Wars al cine", Task.LOW_PRIORITY), false, nil)
-        addTask(t1)
-        addTask(t2)
-        addTask(t3)
-        addTask(t4)
+        var t1 = Task(name: "Pasear al perro", details: "Sacar al perro a pasear antes de desayunar.", priority: Task.MEDIUM_PRIORITY,
+                      complex: false, deadline: nil)
+        var t2 = Task(name: "Estudiar para examen", details: "Estudiar para el examen de historia de la semana que viene.", priority: Task.HIGH_PRIORITY, complex: true, deadline: Date(timeIntervalSinceNow: 600000))
+        var t3 = Task(name: "Regalo Ana", details: "Comprar el regalo de cumpleaños para Ana.", priority: Task.MEDIUM_PRIORITY, complex: false, deadline: Date(timeIntervalSinceNow: 900000))
+        var t4 = Task(name: "Star wars", details: "Ir a ver Star Wars al cine", priority: Task.LOW_PRIORITY, complex: false, deadline: nil)
+            addTask(t1!)
+            addTask(t2!)
+            addTask(t3!)
+            addTask(t4!)
     }
     
 }
