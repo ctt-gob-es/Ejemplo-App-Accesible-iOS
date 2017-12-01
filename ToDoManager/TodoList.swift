@@ -108,6 +108,14 @@ class TaskList {
         return tasks[id]
     }
     
+    func getTask(pos: Int) -> Task? {
+        return list[pos]
+    }
+    
+    func count() -> Int {
+        return list.count()
+    }
+    
     func addTask(_ task: Task) {
         task.id = taskCount
         tasks[task.id] = task
