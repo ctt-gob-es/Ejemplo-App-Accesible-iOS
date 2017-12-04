@@ -26,8 +26,34 @@ class DetailViewController: UIViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-
-    }
+        titleLabel.text = "Title" + ": " + detailItem!.name
+        switch detailItem!.priority {
+        case Task.HIGH_PRIORITY: priorityLabel.text = "Priority" + ": " + "High"
+        case Task.MEDIUM_PRIORITY: priorityLabel.text = "Priority" + ": " + "Medium"
+        case Task.LOW_PRIORITY: priorityLabel.text = "Priority" + ": " + "Low"
+        default: preconditionFailure("Task must not be nil.")
+        }
+        statusLabel.text = "Status" + ": " + detailItem!.status.statusDescription
+        descriptionLabel.text = "Description" + ": " + detailItem!.details
+        if detailItem!.deadline !=   nil {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            formatter.timeStyle = .none
+            deadlineLabel.text = "Deadline" + ": " + formatter.string(from: detailItem!.deadline!)
+            deadlineLabel.isHidden = false
+        } else {
+        deadlineLabel.isHidden = true
+        }
+        if detailItem!.complex {
+            completionSlider.setValue(Float(detailItem!.completed), animated: false)
+            completionLabel.isHidden = false
+            completionSlider.isHidden = false
+            // completionSlider.didChangeValue(for: <#T##KeyPath<UISlider, Value>#>)
+        } else {
+            completionSlider.isHidden = true
+            completionLabel.isHidden = true
+        }
+     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +66,7 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: task? {
+    var detailItem: Task? {
         didSet {
             // Update the view.
             configureView()

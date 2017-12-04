@@ -113,7 +113,7 @@ class TaskList {
     }
     
     func count() -> Int {
-        return list.count()
+        return list.count
     }
     
     func addTask(_ task: Task) {

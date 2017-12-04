@@ -20,21 +20,22 @@ class TaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var modifyButton: UIButton!
     
-    var task: Task
+    var task: Task?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        taskName.text = task.name
-        switch task.priority {
-        case Task.HIGH_PRIORITY: taskName.textColor = UIColor.red()
-        case Task.MEDIUM_PRIORITY: taskName.textColor = UIColor.blue()
-        case Task.LOW_PRIORITY: taskName.textColor = UIColor.magenta()        }
-        if task.deadline != nil {
+        taskName.text = task!.name
+        switch task!.priority {
+        case Task.HIGH_PRIORITY: taskName.textColor = UIColor.red
+        case Task.MEDIUM_PRIORITY: taskName.textColor = UIColor.blue
+        case Task.LOW_PRIORITY: taskName.textColor = UIColor.magenta
+            default: taskName.textColor = UIColor.blue        }
+        if task!.deadline != nil {
             let formatter = DateFormatter()
             formatter.dateStyle = .short
             formatter.timeStyle = .none
-            deadline.text = formatter.string(from: task.deadline)
+            deadline.text = formatter.string(from: task!.deadline!)
         }
     }
 
