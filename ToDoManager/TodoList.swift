@@ -37,6 +37,14 @@ class Task {
         status = PendingTask()
     }
     
+    func complete() {
+        status.completeTask(task: self)
+    }
+    
+    func cancel() {
+        status.cancelTask(task: self)
+    }
+    
 }
 
 class TaskStatus {

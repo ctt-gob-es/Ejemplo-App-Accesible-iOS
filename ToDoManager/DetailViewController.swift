@@ -73,6 +73,12 @@ class DetailViewController: UIViewController {
         }
     }
 
+    
+    @IBAction func deleteTask(_ sender: Any) {
+    }
+    
 
+    @IBAction func completeTask(_ sender: Any) {
+    }
 }
 

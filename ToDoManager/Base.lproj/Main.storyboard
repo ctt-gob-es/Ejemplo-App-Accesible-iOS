@@ -243,13 +243,16 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq6-Di-4bv">
                                                             <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
                                                             <state key="normal" title="Borrar"/>
+                                                            <connections>
+                                                                <action selector="deleteTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="nH6-3l-F2G"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-HD-qb8">
-                                            <rect key="frame" x="30" y="44" width="305" height="30"/>
+                                            <rect key="frame" x="23" y="44" width="312" height="30"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="30" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-Kk-OK6">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
@@ -263,11 +266,14 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZuT-xG-9VU">
-                                                    <rect key="frame" x="240" y="0.0" width="65" height="30"/>
+                                                    <rect key="frame" x="240" y="0.0" width="72" height="30"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-2W-Qii">
-                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="30"/>
-                                                            <state key="normal" title="Modificar"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                                            <state key="normal" title="Completar"/>
+                                                            <connections>
+                                                                <action selector="completeTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="VES-D6-jOE"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
