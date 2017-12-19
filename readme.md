@@ -14,7 +14,7 @@
  Tanto la guía como los ejemplos de aplicación han sido desarrollados por un grupo de investigación de la [Universidad de Alcalá (UAH)][appacces]
  en colaboración con CEAPAT-IMSERSO, ILUNION y Observatorio de Accesibilidad del Ministerio de Hacienda y Función Pública del Gobierno de España. Este ejemplo también está disponible para la [plataforma Android][ejemplo_android].
 
-###Advertencia
+### Advertencia
 
 Este ejemplo todavía está en progreso. El repositorio será actualizado conforme el código se vaya completando.
 
