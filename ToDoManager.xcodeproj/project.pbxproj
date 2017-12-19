@@ -16,6 +16,8 @@
 		9D1B8BCD1FBDADA30023A431 /* ToDoManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B8BCC1FBDADA30023A431 /* ToDoManagerTests.swift */; };
 		9D1B8BD81FBDAF040023A431 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B8BD71FBDAF040023A431 /* TodoList.swift */; };
 		9D3D1C8B1FCF0C4E0099E48D /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3D1C8A1FCF0C4E0099E48D /* TaskTableViewCell.swift */; };
+		9DB967E51FE91A18008F0603 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 9DB967E31FE91A18008F0603 /* readme.md */; };
+		9DB967E61FE91A18008F0603 /* license.md in Resources */ = {isa = PBXBuildFile; fileRef = 9DB967E41FE91A18008F0603 /* license.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		9D1B8BCE1FBDADA30023A431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D1B8BD71FBDAF040023A431 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		9D3D1C8A1FCF0C4E0099E48D /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		9DB967E31FE91A18008F0603 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		9DB967E41FE91A18008F0603 /* license.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = license.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 		9D1B8BA91FBDADA30023A431 = {
 			isa = PBXGroup;
 			children = (
+				9DB967E41FE91A18008F0603 /* license.md */,
+				9DB967E31FE91A18008F0603 /* readme.md */,
 				9D1B8BB41FBDADA30023A431 /* ToDoManager */,
 				9D1B8BCB1FBDADA30023A431 /* ToDoManagerTests */,
 				9D1B8BB31FBDADA30023A431 /* Products */,
@@ -189,7 +195,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1B8BC21FBDADA30023A431 /* LaunchScreen.storyboard in Resources */,
+				9DB967E61FE91A18008F0603 /* license.md in Resources */,
 				9D1B8BBF1FBDADA30023A431 /* Assets.xcassets in Resources */,
+				9DB967E51FE91A18008F0603 /* readme.md in Resources */,
 				9D1B8BBD1FBDADA30023A431 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

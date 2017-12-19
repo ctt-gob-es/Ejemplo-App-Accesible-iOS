@@ -61,7 +61,7 @@ class TaskTableViewCell: UITableViewCell {
         let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
             self.task!.complete()
         })
-        let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
+        le	t cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
         })
         dialog.addAction(ok)
