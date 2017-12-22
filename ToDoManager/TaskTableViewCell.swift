@@ -24,30 +24,7 @@ class TaskTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        taskName.text = task!.name
-        switch task!.priority {
-        case Task.HIGH_PRIORITY: taskName.textColor = UIColor.red
-        case Task.MEDIUM_PRIORITY: taskName.textColor = UIColor.blue
-        case Task.LOW_PRIORITY: taskName.textColor = UIColor.magenta
-            default: taskName.textColor = UIColor.blue
-        }
-        if let st = task!.status as? CompletedTask {
-            deleteButton.isHidden = true
-            completeButton.isHidden = true
-                taskName.textColor = UIColor.green
-                    }
-        else if let st = task!.status as? CanceledTask {
-            deleteButton.isHidden = true
-            completeButton.isHidden = true
-            taskName.textColor = UIColor.gray
-        }
-        if task!.deadline != nil {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .short
-            formatter.timeStyle = .none
-            deadline.text = formatter.string(from: task!.deadline!)
-        }
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -61,14 +38,13 @@ class TaskTableViewCell: UITableViewCell {
         let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
             self.task!.complete()
         })
-        le	t cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
+        let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
         })
         dialog.addAction(ok)
         dialog.addAction(cancel)
         self.window?.rootViewController?.present(dialog, animated: true, completion: nil)
     }
-    
     
     @IBAction func completeTask(_ sender: Any) {
         let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to complete this task?", preferredStyle: .alert)
@@ -81,7 +57,7 @@ class TaskTableViewCell: UITableViewCell {
         dialog.addAction(ok)
         dialog.addAction(cancel)
         self.window?.rootViewController?.present(dialog, animated: true, completion: nil)
+        
     }
-    
 
 }

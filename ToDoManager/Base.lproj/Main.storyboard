@@ -268,11 +268,11 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZuT-xG-9VU">
                                                     <rect key="frame" x="240" y="0.0" width="72" height="30"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-2W-Qii">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-2W-Qii" userLabel="completeButton">
                                                             <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
                                                             <state key="normal" title="Completar"/>
                                                             <connections>
-                                                                <action selector="completeTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="VES-D6-jOE"/>
+                                                                <action selector="completeTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="dKa-HO-jYh"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -289,9 +289,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="completeButton" destination="fA9-2W-Qii" id="5EX-gx-mac"/>
                                     <outlet property="deadline" destination="Xpa-Xf-zjd" id="P9b-Lf-Cuk"/>
                                     <outlet property="deleteButton" destination="Xq6-Di-4bv" id="Vqc-Mm-hT2"/>
-                                    <outlet property="modifyButton" destination="fA9-2W-Qii" id="llh-7n-gZ7"/>
                                     <outlet property="taskName" destination="mBU-bZ-00Z" id="ei1-b1-dcT"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
@@ -340,13 +340,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wF4-6f-A63">
-                                <rect key="frame" x="26" y="359" width="322" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="04C-Vf-c64">
+                                <rect key="frame" x="0.0" y="149" width="375" height="403"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="533668204.16409498">
+                                    <!--2017-11-29 17:10:04 +0000-->
+                                </date>
+                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhA-DB-pD2">
                                 <rect key="frame" x="29" y="579" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -362,13 +362,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
                             </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="04C-Vf-c64">
-                                <rect key="frame" x="0.0" y="149" width="375" height="403"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="533668204.16409498">
-                                    <!--2017-11-29 17:10:04 +0000-->
-                                </date>
-                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="13v-ny-cj3"/>

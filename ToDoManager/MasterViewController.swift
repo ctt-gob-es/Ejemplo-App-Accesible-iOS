@@ -71,13 +71,37 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell", for: indexPath) as? TaskTableViewCell else {
+            fatalError("The cell is not an instance of TaskTableViewCell.")
+        }
 
-        let object = objects.getTask(pos: indexPath.row)
-        // cell.taskName!.text = object.name
-        // if object.deadline != nil {
-        // cell.deadline!.text = object.deadline
-        // }
+        let task = objects.getTask(pos: indexPath.row)
+        cell.task = task
+        
+        // Initialization code
+        cell.taskName.text = task!.name
+        switch task!.priority {
+        case Task.HIGH_PRIORITY: cell.taskName.textColor = UIColor.red
+        case Task.MEDIUM_PRIORITY: cell.taskName.textColor = UIColor.blue
+        case Task.LOW_PRIORITY: cell.taskName.textColor = UIColor.magenta
+        default: cell.taskName.textColor = UIColor.blue
+        }
+        if let st = task!.status as? CompletedTask {
+            cell.deleteButton.isHidden = true
+            cell.completeButton.isHidden = true
+            cell.taskName.textColor = UIColor.green
+        }
+        else if let st = task!.status as? CanceledTask {
+            cell.deleteButton.isHidden = true
+            cell.completeButton.isHidden = true
+            cell.taskName.textColor = UIColor.gray
+        }
+        if task!.deadline != nil {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            formatter.timeStyle = .none
+            cell.deadline.text = formatter.string(from: task!.deadline!)
+        }
         return cell
     }
 

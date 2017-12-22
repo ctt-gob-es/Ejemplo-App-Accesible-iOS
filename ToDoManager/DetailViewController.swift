@@ -69,7 +69,9 @@ class DetailViewController: UIViewController {
     var detailItem: Task? {
         didSet {
             // Update the view.
-            configureView()
+            if self.isViewLoaded {
+                configureView()
+            }
         }
     }
 
