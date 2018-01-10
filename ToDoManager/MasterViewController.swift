@@ -77,6 +77,8 @@ class MasterViewController: UITableViewController {
 
         let task = objects.getTask(pos: indexPath.row)
         cell.task = task
+        cell.tableView = self.tableView
+        cell.position = indexPath
         
         // Initialization code
         cell.taskName.text = task!.name
