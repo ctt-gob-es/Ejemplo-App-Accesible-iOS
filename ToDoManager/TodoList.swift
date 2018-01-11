@@ -44,7 +44,7 @@ class Task {
     func cancel() {
         status.cancelTask(task: self)
     }
-    
+
 }
 
 class TaskStatus {
@@ -129,6 +129,21 @@ class TaskList {
         tasks[task.id] = task
         list.append(task)
         taskCount += 1
+    }
+
+    func setTask(task: Task) -> Bool {
+        if tasks[task.id] != nil {
+            tasks[task.id] = task
+            for (index, value) in list.enumerated() {
+                if value.id == task.id {
+                    list[index] = task
+                    return true
+                }
+            }
+                return false
+        } else {
+            return false
+        }
     }
     
     func fillDefault() {
