@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, TaskListDelegate {
 
     var detailViewController: DetailViewController? = nil
     var objects = TaskList()
@@ -81,7 +81,7 @@ class MasterViewController: UITableViewController {
 
         let task = objects.getTask(pos: indexPath.row)
         cell.task = task
-        cell.tableView = self.tableView
+        cell.taskListDelegate = self
         cell.position = indexPath
         
         // Initialization code
@@ -125,6 +125,18 @@ class MasterViewController: UITableViewController {
         }
     }
 
-
+     func updateTask(task: Task, position pos: IndexPath) {
+        self.tableView.beginUpdates()
+        self.tableView.reloadRows(at: [pos], with: UITableViewRowAnimation.automatic)
+        self.tableView.endUpdates()    }
+    
+     func insertTask(task: Task) {
+        // Todo
+    }
+    
+     func reloadTasks() {
+        // Todo
+    }
+    
 }
 

@@ -20,9 +20,9 @@ class TaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var completeButton: UIButton!
     
-    var task: Task?
-    var tableView: UITableView?
-    var position: IndexPath?
+    weak var task: Task?
+     var position: IndexPath?
+     var taskListDelegate: TaskListDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,9 +39,7 @@ class TaskTableViewCell: UITableViewCell {
         let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to cancel this task?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
             self.task!.cancel()
-            if let position = self.position {
-            self.tableView?.reloadRows(at: [position], with: UITableViewRowAnimation.automatic)
-            }
+            self.taskListDelegate!.updateTask(task: self.task!, position: self.position!)
         })
         let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
@@ -55,9 +53,7 @@ class TaskTableViewCell: UITableViewCell {
         let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to complete this task?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
             self.task!.complete()
-            if let position = self.position {
-            self.tableView?.reloadRows(at: [position], with: UITableViewRowAnimation.automatic)
-            }
+            self.taskListDelegate!.updateTask(task: self.task!, position: self.position!)
         })
         let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
