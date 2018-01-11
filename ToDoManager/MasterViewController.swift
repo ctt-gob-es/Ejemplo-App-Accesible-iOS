@@ -126,16 +126,25 @@ class MasterViewController: UITableViewController, TaskListDelegate {
     }
 
      func updateTask(task: Task, position pos: IndexPath) {
+        let updated = self.objects.setTask(task: task)
+        if updated {
         self.tableView.beginUpdates()
         self.tableView.reloadRows(at: [pos], with: UITableViewRowAnimation.automatic)
-        self.tableView.endUpdates()    }
+        self.tableView.endUpdates()
+        }
+        }
     
      func insertTask(task: Task) {
-        // Todo
+        self.objects.addTask(task)
+        self.tableView.beginUpdates()
+        self.tableView.reloadData()
+        self.tableView.endUpdates()
     }
     
      func reloadTasks() {
-        // Todo
+        self.tableView.beginUpdates()
+        self.tableView.reloadData()
+        self.tableView.endUpdates()
     }
     
 }
