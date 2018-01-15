@@ -228,7 +228,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-sp-GyP">
-                                            <rect key="frame" x="16" y="12" width="293" height="30"/>
+                                            <rect key="frame" x="16" y="11.5" width="293" height="30"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="30" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hkj-Tg-wXh">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>

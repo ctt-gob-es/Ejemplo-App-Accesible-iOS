@@ -33,7 +33,6 @@ class MasterViewController: UITableViewController, TaskListDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        self.tableView.reloadData()
     }
     
 	    override func didReceiveMemoryWarning() {
@@ -55,7 +54,7 @@ class MasterViewController: UITableViewController, TaskListDelegate {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let object = objects.getTask(pos: indexPath.row)
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+                controller.detailItem = object?.copy() as! Task
                 controller.position = indexPath
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true

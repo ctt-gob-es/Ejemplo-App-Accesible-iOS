@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Task {
+class Task: NSCopying {
     static let HIGH_PRIORITY = 3
     static let MEDIUM_PRIORITY = 2
     static let LOW_PRIORITY = 1
@@ -45,6 +45,13 @@ class Task {
         status.cancelTask(task: self)
     }
 
+    func copy(with zone: NSZone? = nil) -> Any {
+        let t = Task(name: self.name, details: self.details, priority: self.priority, complex: self.complex, deadline: self.deadline)
+        t?.id = self.id
+        t?.completed = self.completed
+        return t
+    }
+    
 }
 
 class TaskStatus {
@@ -147,11 +154,11 @@ class TaskList {
     }
     
     func fillDefault() {
-        var t1 = Task(name: "Pasear al perro", details: "Sacar al perro a pasear antes de desayunar.", priority: Task.MEDIUM_PRIORITY,
+        let t1 = Task(name: "Pasear al perro", details: "Sacar al perro a pasear antes de desayunar.", priority: Task.MEDIUM_PRIORITY,
                       complex: false, deadline: nil)
-        var t2 = Task(name: "Estudiar para examen", details: "Estudiar para el examen de historia de la semana que viene.", priority: Task.HIGH_PRIORITY, complex: true, deadline: Date(timeIntervalSinceNow: 600000))
-        var t3 = Task(name: "Regalo Ana", details: "Comprar el regalo de cumpleaños para Ana.", priority: Task.MEDIUM_PRIORITY, complex: false, deadline: Date(timeIntervalSinceNow: 900000))
-        var t4 = Task(name: "Star wars", details: "Ir a ver Star Wars al cine", priority: Task.LOW_PRIORITY, complex: false, deadline: nil)
+        let t2 = Task(name: "Estudiar para examen", details: "Estudiar para el examen de historia de la semana que viene.", priority: Task.HIGH_PRIORITY, complex: true, deadline: Date(timeIntervalSinceNow: 600000))
+        let t3 = Task(name: "Regalo Ana", details: "Comprar el regalo de cumpleaños para Ana.", priority: Task.MEDIUM_PRIORITY, complex: false, deadline: Date(timeIntervalSinceNow: 900000))
+        let t4 = Task(name: "Star wars", details: "Ir a ver Star Wars al cine", priority: Task.LOW_PRIORITY, complex: false, deadline: nil)
             addTask(t1!)
             addTask(t2!)
             addTask(t3!)
