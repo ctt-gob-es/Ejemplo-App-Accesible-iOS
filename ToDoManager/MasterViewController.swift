@@ -19,8 +19,6 @@ class MasterViewController: UITableViewController, TaskListDelegate {
         // Initialize the task list.
         objects.fillDefault()
         // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.leftBarButtonItem = editButtonItem
-
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
@@ -58,6 +56,7 @@ class MasterViewController: UITableViewController, TaskListDelegate {
                 let object = objects.getTask(pos: indexPath.row)
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
+                controller.position = indexPath
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }

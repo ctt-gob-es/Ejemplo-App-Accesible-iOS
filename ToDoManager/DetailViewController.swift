@@ -23,6 +23,17 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var completionLabel: UILabel!
     
     @IBOutlet weak var completionSlider: UISlider!
+
+    var position: IndexPath?
+    weak var detailItem: Task? {
+        didSet {
+            // Update the view.
+            if self.isViewLoaded {
+                configureView()
+            }
+        }
+    }
+    var taskListDelegate: TaskListDelegate?
     
     func configureView() {
         // Update the user interface for the detail item.
@@ -57,30 +68,54 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib
+        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTask(_:)))
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTask(_:)))
+        let completeButton = UIBarButtonItem(barButtonSystemItem: .done,  target: self, action: #selector(completeTask(_:)))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTask(_:)))
+
+        navigationItem.leftBarButtonItems = [editButton, completeButton, cancelButton]
+        navigationItem.rightBarButtonItem = saveButton
         configureView()
     }
 
-    override func didReceiveMemoryWarning() {
+  	  override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: Task? {
-        didSet {
-            // Update the view.
-            if self.isViewLoaded {
-                configureView()
-            }
-        }
+    @objc func cancelTask(_ sender: Any) {
+        let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to cancel this task?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
+            self.detailItem!.cancel()
+        })
+        let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
+            //Nothing to do.
+        })
+        dialog.addAction(ok)
+        dialog.addAction(cancel)
+        self.present(dialog, animated: true, completion: nil)
     }
 
-    
-    @IBAction func deleteTask(_ sender: Any) {
+    @objc func completeTask(_ sender: Any) {
+        let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to complete this task?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
+            self.detailItem!.complete()
+        })
+        let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
+            //Nothing to do.
+        })
+        dialog.addAction(ok)
+        dialog.addAction(cancel)
+        self.present(dialog, animated: true, completion: nil)
+    }
+
+    @objc func editTask(_ sender: Any) {
+        
     }
     
-
-    @IBAction func completeTask(_ sender: Any) {
+    @objc func saveTask(_ sender: Any) {
+        taskListDelegate?.updateTask(task: self.detailItem!, position: self.position!)
     }
 }
 

@@ -63,5 +63,8 @@ class TaskTableViewCell: UITableViewCell {
         self.window?.rootViewController?.present(dialog, animated: true, completion: nil)
         
     }
-
+    
+    @IBAction func completionChange(_ sender: Any) {
+    }
+    
 }

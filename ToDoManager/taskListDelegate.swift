@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TaskListDelegate {
-    func updateTask(task task: Task, position pos: IndexPath)
-    func insertTask(task task: Task)
+    func updateTask(task: Task, position pos: IndexPath)
+    func insertTask(task: Task)
     func reloadTasks()
 }
