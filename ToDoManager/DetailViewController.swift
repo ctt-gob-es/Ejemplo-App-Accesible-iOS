@@ -55,7 +55,16 @@ class DetailViewController: UIViewController {
         } else {
         deadlineLabel.isHidden = true
         }
-        if detailItem!.complex {
+        if let st = detailItem?.status as! CompletedTask? {
+            navigationItem.rightBarButtonItems = []
+            completionSlider.isHidden = true
+            completionLabel.isHidden = true
+        } else if let st = detailItem?.status as! CanceledTask? {
+            navigationItem.rightBarButtonItems = []
+            completionSlider.isHidden = true
+            completionLabel.isHidden = true
+        }
+        else if detailItem!.complex {
             completionSlider.setValue(Float(detailItem!.completed), animated: false)
             completionLabel.isHidden = false
             completionSlider.isHidden = false
@@ -88,6 +97,7 @@ class DetailViewController: UIViewController {
         let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to cancel this task?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
             self.detailItem!.cancel()
+            self.configureView()
         })
         let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
@@ -101,6 +111,7 @@ class DetailViewController: UIViewController {
         let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to complete this task?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
             self.detailItem!.complete()
+            self.configureView()
         })
         let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
@@ -116,6 +127,7 @@ class DetailViewController: UIViewController {
     
     @objc func saveTask(_ sender: Any) {
         taskListDelegate?.updateTask(task: self.detailItem!, position: self.position!)
+        navigationController?.popViewController(animated: true)
     }
 }
 
