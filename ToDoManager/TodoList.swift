@@ -47,9 +47,14 @@ class Task: NSCopying {
 
     func copy(with zone: NSZone? = nil) -> Any {
         let t = Task(name: self.name, details: self.details, priority: self.priority, complex: self.complex, deadline: self.deadline)
-        t?.id = self.id
-        t?.completed = self.completed
-        return t
+        if let copy = t {
+            copy.id = self.id
+            copy.completed = self.completed
+            copy.status = self.status
+            return copy
+        } else {
+            preconditionFailure("The original object is invalid.")
+        }
     }
     
 }

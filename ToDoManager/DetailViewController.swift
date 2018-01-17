@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var completionSlider: UISlider!
 
     var position: IndexPath?
-    weak var detailItem: Task? {
+     var detailItem: Task? {
         didSet {
             // Update the view.
             if self.isViewLoaded {
@@ -55,11 +55,11 @@ class DetailViewController: UIViewController {
         } else {
         deadlineLabel.isHidden = true
         }
-        if let st = detailItem?.status as! CompletedTask? {
+        if let st = detailItem?.status as? CompletedTask {
             navigationItem.rightBarButtonItems = []
             completionSlider.isHidden = true
             completionLabel.isHidden = true
-        } else if let st = detailItem?.status as! CanceledTask? {
+        } else if let st = detailItem?.status as? CanceledTask {
             navigationItem.rightBarButtonItems = []
             completionSlider.isHidden = true
             completionLabel.isHidden = true
@@ -131,6 +131,20 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func completionChanged(_ sender: Any) {
+        let completion = Int(self.completionSlider.value)
+        if completion == 100 {
+            let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to complete this task?", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
+                self.detailItem!.complete()
+                self.configureView()
+            })
+            let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
+                self.completionSlider.value = 99
+                            })
+            dialog.addAction(ok)
+            dialog.addAction(cancel)
+            self.present(dialog, animated: true, completion: nil)
+        }
     }
     
     

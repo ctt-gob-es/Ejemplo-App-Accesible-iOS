@@ -212,7 +212,7 @@
                         <outlet property="nextButton" destination="CzP-Uu-uLr" id="Rd4-7J-ZAf"/>
                         <outlet property="priorityField" destination="xhJ-qh-MbA" id="E99-FO-BiM"/>
                         <outlet property="titleField" destination="oge-kI-QLk" id="lO1-cr-VRR"/>
-                        <segue destination="mJQ-XY-at2" kind="custom" id="OAi-Bs-JqE"/>
+                        <segue destination="mJQ-XY-at2" kind="custom" identifier="setDeadline" id="OAi-Bs-JqE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzs-L5-hxU" userLabel="First Responder" sceneMemberID="firstResponder"/>

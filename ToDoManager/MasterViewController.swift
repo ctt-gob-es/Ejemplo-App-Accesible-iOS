@@ -52,10 +52,12 @@ class MasterViewController: UITableViewController, TaskListDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects.getTask(pos: indexPath.row)
+                let object = objects.getTask(pos: indexPath.row)!
+                let o = object.copy() as! Task
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object?.copy() as! Task
+                controller.detailItem = o
                 controller.position = indexPath
+                controller.taskListDelegate = self
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
