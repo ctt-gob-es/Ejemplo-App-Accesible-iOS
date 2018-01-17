@@ -80,7 +80,7 @@
                                 <rect key="frame" x="24" y="422" width="326" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="completionChange:" destination="TMM-sS-Xqr" eventType="valueChanged" id="KFP-9f-iFE"/>
+                                    <action selector="completionChanged:" destination="JEX-9P-axG" eventType="valueChanged" id="7rl-8D-g6H"/>
                                 </connections>
                             </slider>
                         </subviews>
@@ -97,10 +97,10 @@
                         <outlet property="priorityLabel" destination="ibC-Z4-iZY" id="YRI-Wn-Ku2"/>
                         <outlet property="statusLabel" destination="ja8-j1-BJ0" id="Kg9-JS-h2O"/>
                         <outlet property="titleLabel" destination="ktD-cR-zOp" id="iLd-5g-6Wa"/>
+                        <segue destination="xvc-Nj-gZD" kind="custom" identifier="editTask" id="sPv-ye-h8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
-                <exit id="TMM-sS-Xqr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="708" y="128.18590704647679"/>
         </scene>
@@ -158,6 +158,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MGA-gh-Agk">
                                 <rect key="frame" x="190" y="504" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="deadlineChanged:" destination="xvc-Nj-gZD" eventType="valueChanged" id="g83-JL-cbp"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Is complex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q89-Gv-Zik">
                                 <rect key="frame" x="71" y="509" width="82" height="21"/>
@@ -177,21 +180,40 @@
                                 <rect key="frame" x="29" y="579" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
+                                <connections>
+                                    <action selector="finishPressed:" destination="xvc-Nj-gZD" eventType="touchUpInside" id="kyp-I1-dSh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzP-Uu-uLr">
                                 <rect key="frame" x="84" y="579" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextPressed:" destination="xvc-Nj-gZD" eventType="touchUpInside" id="hxR-PK-QTr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tk0-mH-mVD">
                                 <rect key="frame" x="148" y="579" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="xvc-Nj-gZD" eventType="touchUpInside" id="3J3-gl-EM8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="IUU-kz-UGv"/>
                     </view>
+                    <connections>
+                        <outlet property="complexField" destination="o9R-aQ-aWF" id="KNA-qp-ZlQ"/>
+                        <outlet property="deadlineField" destination="MGA-gh-Agk" id="9jt-aa-npF"/>
+                        <outlet property="descriptionField" destination="hVa-qB-WwQ" id="ZTi-SN-hdc"/>
+                        <outlet property="finishButton" destination="rFd-nm-Iup" id="SQX-JJ-xpw"/>
+                        <outlet property="nextButton" destination="CzP-Uu-uLr" id="Rd4-7J-ZAf"/>
+                        <outlet property="priorityField" destination="xhJ-qh-MbA" id="E99-FO-BiM"/>
+                        <outlet property="titleField" destination="oge-kI-QLk" id="lO1-cr-VRR"/>
+                        <segue destination="mJQ-XY-at2" kind="custom" id="OAi-Bs-JqE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzs-L5-hxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -308,6 +330,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDo Manager" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <segue destination="xvc-Nj-gZD" kind="custom" identifier="createTask" id="7p6-fz-THF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,26 +375,41 @@
                                 <date key="date" timeIntervalSinceReferenceDate="533668204.16409498">
                                     <!--2017-11-29 17:10:04 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="deadlineChanged:" destination="mJQ-XY-at2" eventType="valueChanged" id="bTr-bG-rBS"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhA-DB-pD2">
                                 <rect key="frame" x="29" y="579" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
+                                <connections>
+                                    <action selector="finishPressed:" destination="mJQ-XY-at2" eventType="touchUpInside" id="3kG-Ow-suR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUo-2k-yRh">
                                 <rect key="frame" x="83" y="579" width="59" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Previous"/>
+                                <connections>
+                                    <action selector="previousPressed:" destination="mJQ-XY-at2" eventType="touchUpInside" id="1iK-9c-czE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVO-Mo-jbE">
                                 <rect key="frame" x="148" y="579" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="mJQ-XY-at2" eventType="touchUpInside" id="s73-HJ-rKP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="13v-ny-cj3"/>
                     </view>
+                    <connections>
+                        <outlet property="deadlineField" destination="04C-Vf-c64" id="C8M-ug-WjH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEO-go-7a7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -377,6 +417,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
+        <segue reference="7p6-fz-THF"/>
     </inferredMetricsTieBreakers>
 </document>

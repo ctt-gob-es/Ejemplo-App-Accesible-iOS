@@ -129,5 +129,10 @@ class DetailViewController: UIViewController {
         taskListDelegate?.updateTask(task: self.detailItem!, position: self.position!)
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func completionChanged(_ sender: Any) {
+    }
+    
+    
 }
 

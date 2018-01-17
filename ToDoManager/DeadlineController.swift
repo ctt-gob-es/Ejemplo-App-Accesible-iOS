@@ -13,4 +13,17 @@ class DeadlineController: UIViewController {
     
     // MARK: properties
     
+    @IBOutlet weak var deadlineField: UIDatePicker!
+    
+    @IBAction func deadlineChanged(_ sender: Any) {
+    }
+    
+    @IBAction func previousPressed(_ sender: Any) {
+    }
+    
+    @IBAction func finishPressed(_ sender: Any) {
+    }
+    
+    @IBAction func cancelPressed(_ sender: Any) {
+    }
 }

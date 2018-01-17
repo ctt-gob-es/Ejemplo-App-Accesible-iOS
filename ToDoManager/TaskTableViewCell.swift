@@ -64,7 +64,4 @@ class TaskTableViewCell: UITableViewCell {
         
     }
     
-    @IBAction func completionChange(_ sender: Any) {
-    }
-    
 }
