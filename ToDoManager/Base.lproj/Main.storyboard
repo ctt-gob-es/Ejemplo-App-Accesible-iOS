@@ -107,7 +107,7 @@
         <!--EditTask-->
         <scene sceneID="ZtB-Mc-60X">
             <objects>
-                <viewController title="EditTask" id="xvc-Nj-gZD" sceneMemberID="viewController">
+                <viewController title="EditTask" id="xvc-Nj-gZD" customClass="EditTaskController" customModule="ToDoManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oge-kI-QLk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,7 +332,7 @@
         <!--setDeadline-->
         <scene sceneID="i5W-dJ-AVe">
             <objects>
-                <viewController title="setDeadline" id="mJQ-XY-at2" sceneMemberID="viewController">
+                <viewController title="setDeadline" id="mJQ-XY-at2" customClass="DeadlineController" customModule="ToDoManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l1S-kb-Q8j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

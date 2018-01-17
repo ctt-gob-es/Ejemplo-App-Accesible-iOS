@@ -16,6 +16,9 @@
 		9D1B8BCD1FBDADA30023A431 /* ToDoManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B8BCC1FBDADA30023A431 /* ToDoManagerTests.swift */; };
 		9D1B8BD81FBDAF040023A431 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B8BD71FBDAF040023A431 /* TodoList.swift */; };
 		9D3D1C8B1FCF0C4E0099E48D /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3D1C8A1FCF0C4E0099E48D /* TaskTableViewCell.swift */; };
+		9D818137200F449C00C25AE4 /* EditTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D818136200F449C00C25AE4 /* EditTaskController.swift */; };
+		9D818139200F44DC00C25AE4 /* DeadlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D818138200F44DC00C25AE4 /* DeadlineController.swift */; };
+		9D81813B200F453600C25AE4 /* EditTaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81813A200F453600C25AE4 /* EditTaskDelegate.swift */; };
 		9D89CB132007518700785781 /* taskListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D89CB122007518700785781 /* taskListDelegate.swift */; };
 		9DB967E51FE91A18008F0603 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 9DB967E31FE91A18008F0603 /* readme.md */; };
 		9DB967E61FE91A18008F0603 /* license.md in Resources */ = {isa = PBXBuildFile; fileRef = 9DB967E41FE91A18008F0603 /* license.md */; };
@@ -45,6 +48,9 @@
 		9D1B8BCE1FBDADA30023A431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D1B8BD71FBDAF040023A431 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		9D3D1C8A1FCF0C4E0099E48D /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		9D818136200F449C00C25AE4 /* EditTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskController.swift; sourceTree = "<group>"; };
+		9D818138200F44DC00C25AE4 /* DeadlineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineController.swift; sourceTree = "<group>"; };
+		9D81813A200F453600C25AE4 /* EditTaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskDelegate.swift; sourceTree = "<group>"; };
 		9D89CB122007518700785781 /* taskListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskListDelegate.swift; sourceTree = "<group>"; };
 		9DB967E31FE91A18008F0603 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		9DB967E41FE91A18008F0603 /* license.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = license.md; sourceTree = "<group>"; };
@@ -101,6 +107,9 @@
 				9D1B8BD71FBDAF040023A431 /* TodoList.swift */,
 				9D3D1C8A1FCF0C4E0099E48D /* TaskTableViewCell.swift */,
 				9D89CB122007518700785781 /* taskListDelegate.swift */,
+				9D818136200F449C00C25AE4 /* EditTaskController.swift */,
+				9D818138200F44DC00C25AE4 /* DeadlineController.swift */,
+				9D81813A200F453600C25AE4 /* EditTaskDelegate.swift */,
 			);
 			path = ToDoManager;
 			sourceTree = "<group>";
@@ -222,7 +231,10 @@
 				9D1B8BBA1FBDADA30023A431 /* DetailViewController.swift in Sources */,
 				9D1B8BB81FBDADA30023A431 /* MasterViewController.swift in Sources */,
 				9D3D1C8B1FCF0C4E0099E48D /* TaskTableViewCell.swift in Sources */,
+				9D81813B200F453600C25AE4 /* EditTaskDelegate.swift in Sources */,
+				9D818137200F449C00C25AE4 /* EditTaskController.swift in Sources */,
 				9D89CB132007518700785781 /* taskListDelegate.swift in Sources */,
+				9D818139200F44DC00C25AE4 /* DeadlineController.swift in Sources */,
 				9D1B8BB61FBDADA30023A431 /* AppDelegate.swift in Sources */,
 				9D1B8BD81FBDAF040023A431 /* TodoList.swift in Sources */,
 			);
