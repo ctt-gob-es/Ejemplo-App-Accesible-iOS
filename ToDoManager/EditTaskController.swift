@@ -50,6 +50,7 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         priorityField.dataSource = self
         priorityField.delegate = self
         configureView()
+        navigationController?.isNavigationBarHidden = true
     }
     
     func updateTask() {
