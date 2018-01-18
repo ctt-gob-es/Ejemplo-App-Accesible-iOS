@@ -9,9 +9,9 @@
 import Foundation
 
 class Task: NSCopying {
-    static let HIGH_PRIORITY = 3
-    static let MEDIUM_PRIORITY = 2
-    static let LOW_PRIORITY = 1
+    static let HIGH_PRIORITY = 0
+    static let MEDIUM_PRIORITY = 1
+    static let LOW_PRIORITY = 2
     var id: Int = 0
     var name="", details=""
     var priority=Task.MEDIUM_PRIORITY
