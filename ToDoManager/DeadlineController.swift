@@ -15,15 +15,36 @@ class DeadlineController: UIViewController {
     
     @IBOutlet weak var deadlineField: UIDatePicker!
     
+    var task: Task?
+    var delegate: EditTaskDelegate?
+    
+    func configureView() {
+        deadlineField.minimumDate = Date()
+        if let deadline = task!.deadline as? Date{
+            deadlineField.date = deadline
+        } else {
+            deadlineField.date = Date(timeIntervalSinceNow: 1)
+        }
+    }
+    
+    override func viewDidLoad() {
+        configureView()
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     @IBAction func deadlineChanged(_ sender: Any) {
     }
     
     @IBAction func previousPressed(_ sender: Any) {
+        delegate?.previousStep()
     }
     
     @IBAction func finishPressed(_ sender: Any) {
+        task!.deadline = deadlineField.date
+        delegate?.finish(task: task!)
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
+        delegate?.cancel()
     }
 }
