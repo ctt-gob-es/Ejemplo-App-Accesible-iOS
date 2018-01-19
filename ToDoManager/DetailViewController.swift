@@ -83,8 +83,8 @@ class DetailViewController: UIViewController, EditTaskDelegate {
         let completeButton = UIBarButtonItem(barButtonSystemItem: .done,  target: self, action: #selector(completeTask(_:)))
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTask(_:)))
 
-        navigationItem.leftBarButtonItems = [editButton, saveButton]
-        navigationItem.rightBarButtonItems = [cancelButton, completeButton]
+        navigationItem.leftBarButtonItems = [saveButton]
+        navigationItem.rightBarButtonItems = [editButton, cancelButton, completeButton]
         configureView()
     }
 
