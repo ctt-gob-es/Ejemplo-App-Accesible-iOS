@@ -12,6 +12,7 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
 
     var detailViewController: DetailViewController? = nil
     var objects = TaskList()
+    var tempTask: Task?
 
 
     override func viewDidLoad() {
@@ -42,6 +43,7 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
 
     @objc
     func insertNewObject(_ sender: Any) {
+        tempTask = Task()
         performSegue(withIdentifier: "createTask", sender: nil)
     }
 
@@ -62,7 +64,11 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         } else if segue.identifier == "createTask" {
             let controller = (segue.destination as! UINavigationController).topViewController as! EditTaskController
             controller.delegate = self
-            controller.task = Task()
+            controller.task = tempTask?.copy() as! Task
+        } else if segue.identifier == "setDeadline" {
+            let controller = (segue.destination as! UINavigationController).topViewController as! DeadlineController
+            controller.delegate = self
+            controller.task = tempTask
         }
     }
 
@@ -150,7 +156,8 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
     }
 
     func nextStep(task: Task) {
-        
+        tempTask = task
+        performSegue(withIdentifier: "setDeadline", sender: nil)
     }
     
     func previousStep() {
@@ -159,9 +166,12 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
     
     func finish(task: Task) {
         insertTask(task: task)
+        tempTask = nil
+        navigationController?.popToViewController(self, animated: true)
     }
     
     func cancel() {
+        tempTask = nil
         navigationController?.popToViewController(self, animated: true)
     }
 }
