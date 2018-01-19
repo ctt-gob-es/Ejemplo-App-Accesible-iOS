@@ -97,7 +97,7 @@
                         <outlet property="priorityLabel" destination="ibC-Z4-iZY" id="YRI-Wn-Ku2"/>
                         <outlet property="statusLabel" destination="ja8-j1-BJ0" id="Kg9-JS-h2O"/>
                         <outlet property="titleLabel" destination="ktD-cR-zOp" id="iLd-5g-6Wa"/>
-                        <segue destination="xvc-Nj-gZD" kind="custom" identifier="editTask" id="sPv-ye-h8g"/>
+                        <segue destination="xvc-Nj-gZD" kind="showDetail" identifier="editTask" id="sPv-ye-h8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -212,7 +212,7 @@
                         <outlet property="nextButton" destination="CzP-Uu-uLr" id="Rd4-7J-ZAf"/>
                         <outlet property="priorityField" destination="xhJ-qh-MbA" id="E99-FO-BiM"/>
                         <outlet property="titleField" destination="oge-kI-QLk" id="lO1-cr-VRR"/>
-                        <segue destination="mJQ-XY-at2" kind="custom" identifier="setDeadline" id="OAi-Bs-JqE"/>
+                        <segue destination="mJQ-XY-at2" kind="showDetail" identifier="setDeadline" id="OAi-Bs-JqE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzs-L5-hxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,7 +331,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDo Manager" id="Zdf-7t-Un8"/>
                     <connections>
-                        <segue destination="xvc-Nj-gZD" kind="custom" identifier="createTask" id="7p6-fz-THF"/>
+                        <segue destination="xvc-Nj-gZD" kind="showDetail" identifier="createTask" id="7p6-fz-THF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -417,7 +417,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tll-UG-LXB"/>
+        <segue reference="6S0-TO-JiA"/>
         <segue reference="7p6-fz-THF"/>
     </inferredMetricsTieBreakers>
 </document>
