@@ -20,6 +20,10 @@ class Task: NSCopying {
     var deadline: Date?
     var status: TaskStatus = PendingTask()
     
+    init() {
+        
+    }
+    
     init?(name: String, details: String, priority: Int, complex: Bool, deadline: Date?) {
         id = 0
         if name.isEmpty {

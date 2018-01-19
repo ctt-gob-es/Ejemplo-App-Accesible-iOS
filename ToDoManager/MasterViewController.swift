@@ -42,9 +42,7 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
 
     @objc
     func insertNewObject(_ sender: Any) {
-        // objects.insert(NSDate(), at: 0)
-        // let indexPath = IndexPath(row: 0, section: 0)
-        // tableView.insertRows(at: [indexPath], with: .automatic)
+        performSegue(withIdentifier: "createTask", sender: nil)
     }
 
     // MARK: - Segues
@@ -61,6 +59,10 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
+        } else if segue.identifier == "createTask" {
+            let controller = (segue.destination as! UINavigationController).topViewController as! EditTaskController
+            controller.delegate = self
+            controller.task = Task()
         }
     }
 
