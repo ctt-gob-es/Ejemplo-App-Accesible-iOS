@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, EditTaskDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -147,6 +147,22 @@ class DetailViewController: UIViewController {
         }
     }
     
+    func nextStep(task: Task) {
+        
+    }
+    
+    func previousStep() {
+        navigationController?.navigationController?.popViewController(animated: true)
+    }
+    
+    func finish(task: Task) {
+        self.detailItem = task
+        navigationController?.navigationController?.popToViewController(self, animated: true)
+    }
+    
+    func cancel() {
+        navigationController?.navigationController?.popToViewController(self, animated: true)
+    }
     
 }
 

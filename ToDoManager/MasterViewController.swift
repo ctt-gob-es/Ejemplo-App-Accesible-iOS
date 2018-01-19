@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController, TaskListDelegate {
+class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDelegate {
 
     var detailViewController: DetailViewController? = nil
     var objects = TaskList()
@@ -146,6 +146,21 @@ class MasterViewController: UITableViewController, TaskListDelegate {
         self.tableView.reloadData()
         self.tableView.endUpdates()
     }
+
+    func nextStep(task: Task) {
+        
+    }
     
+    func previousStep() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func finish(task: Task) {
+        insertTask(task: task)
+    }
+    
+    func cancel() {
+        navigationController?.popToViewController(self, animated: true)
+    }
 }
 
