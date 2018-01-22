@@ -62,14 +62,11 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         } else if segue.identifier == "createTask" {
-            if let controller = segue.destination as? EditTaskController {
+            let controller = segue.destination as! EditTaskController
             controller.delegate = self
             controller.task = tempTask?.copy() as! Task
-            } else {
-                print("Controller: \(segue.destination)")
-            }
         } else if segue.identifier == "setDeadline" {
-            let controller = (segue.destination as! UINavigationController).topViewController as! DeadlineController
+            let controller = segue.destination as! DeadlineController
             controller.delegate = self
             controller.task = tempTask
         }
