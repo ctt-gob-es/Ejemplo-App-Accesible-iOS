@@ -66,6 +66,13 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     @IBAction func deadlineChanged(_ sender: Any) {
+        if deadlineField.isOn {
+            nextButton.isHidden = false
+            finishButton.isHidden = true
+        } else {
+            nextButton.isHidden = true
+            finishButton.isHidden = false
+        }
     }
     
     @IBAction func nextPressed(_ sender: Any) {
