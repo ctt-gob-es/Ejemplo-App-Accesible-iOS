@@ -44,7 +44,7 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
     @objc
     func insertNewObject(_ sender: Any) {
         tempTask = Task()
-        performSegue(withIdentifier: "createTask", sender: nil)
+        performSegue(withIdentifier: "createTask", sender: self)
     }
 
     // MARK: - Segues
@@ -62,9 +62,12 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         } else if segue.identifier == "createTask" {
-            let controller = (segue.destination as! UINavigationController).topViewController as! EditTaskController
+            if let controller = segue.destination as? EditTaskController {
             controller.delegate = self
             controller.task = tempTask?.copy() as! Task
+            } else {
+                print("Controller: \(segue.destination)")
+            }
         } else if segue.identifier == "setDeadline" {
             let controller = (segue.destination as! UINavigationController).topViewController as! DeadlineController
             controller.delegate = self
@@ -157,7 +160,7 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
 
     func nextStep(task: Task) {
         tempTask = task
-        performSegue(withIdentifier: "setDeadline", sender: nil)
+        performSegue(withIdentifier: "setDeadline", sender: self)
     }
     
     func previousStep() {

@@ -41,10 +41,12 @@ class DeadlineController: UIViewController {
     
     @IBAction func finishPressed(_ sender: Any) {
         task!.deadline = deadlineField.date
+        navigationController?.isNavigationBarHidden = false
         delegate?.finish(task: task!)
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
+        navigationController?.isNavigationBarHidden = false
         delegate?.cancel()
     }
 }

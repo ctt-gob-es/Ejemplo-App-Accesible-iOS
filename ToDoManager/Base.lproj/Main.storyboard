@@ -211,7 +211,7 @@
                         <outlet property="finishButton" destination="rFd-nm-Iup" id="SQX-JJ-xpw"/>
                         <outlet property="nextButton" destination="CzP-Uu-uLr" id="Rd4-7J-ZAf"/>
                         <outlet property="priorityField" destination="xhJ-qh-MbA" id="E99-FO-BiM"/>
-                        <outlet property="titleField" destination="oge-kI-QLk" id="lO1-cr-VRR"/>
+                        <outlet property="titleField" destination="yNQ-Hl-kDJ" id="GGQ-hx-CWH"/>
                         <segue destination="mJQ-XY-at2" kind="showDetail" identifier="setDeadline" id="OAi-Bs-JqE"/>
                     </connections>
                 </viewController>
@@ -417,7 +417,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
-        <segue reference="7p6-fz-THF"/>
+        <segue reference="Tll-UG-LXB"/>
+        <segue reference="sPv-ye-h8g"/>
     </inferredMetricsTieBreakers>
 </document>

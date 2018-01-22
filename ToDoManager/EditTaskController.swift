@@ -13,6 +13,7 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     // MARK: Properties
     
+
     @IBOutlet weak var titleField: UITextField!
     
     @IBOutlet weak var priorityField: UIPickerView!
@@ -74,10 +75,12 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func finishPressed(_ sender: Any) {
         updateTask()
+        navigationController?.isNavigationBarHidden = false
         delegate?.finish(task: task!)
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
+        navigationController?.isNavigationBarHidden = false
         delegate?.cancel()
     }
     
