@@ -65,10 +65,11 @@ class DetailViewController: UIViewController, EditTaskDelegate {
             completionLabel.isHidden = true
         }
         else if detailItem!.complex {
-            completionSlider.setValue(Float(detailItem!.completed), animated: false)
             completionLabel.isHidden = false
             completionSlider.isHidden = false
-            // completionSlider.didChangeValue(for: <#T##KeyPath<UISlider, Value>#>)
+            completionSlider.maximumValue = 100
+            completionSlider.minimumValue = 0
+            completionSlider.value = Float(detailItem!.completed)
         } else {
             completionSlider.isHidden = true
             completionLabel.isHidden = true
@@ -132,6 +133,7 @@ class DetailViewController: UIViewController, EditTaskDelegate {
     
     @IBAction func completionChanged(_ sender: Any) {
         let completion = Int(self.completionSlider.value)
+        detailItem?.completed = completion
         if completion == 100 {
             let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to complete this task?", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
