@@ -53,6 +53,14 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         configureView()
         navigationController?.isNavigationBarHidden = true
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "setDeadline" {
+            let controller = (segue.destination as! UINavigationController).topViewController as! DeadlineController
+            controller.delegate = delegate
+            controller.task = task
+        }
+    }
     
     func updateTask() {
         task!.name = titleField.text!
@@ -77,7 +85,7 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func nextPressed(_ sender: Any) {
         updateTask()
-        delegate?.nextStep(task: task!)
+        performSegue(withIdentifier: "setDeadline", sender: self)
     }
     
     @IBAction func finishPressed(_ sender: Any) {

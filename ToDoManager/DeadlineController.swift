@@ -20,8 +20,8 @@ class DeadlineController: UIViewController {
     
     func configureView() {
         deadlineField.minimumDate = Date()
-        if let deadline = task!.deadline as? Date{
-            deadlineField.date = deadline
+        if task!.deadline != nil {
+            deadlineField.date = task!.deadline!
         } else {
             deadlineField.date = Date(timeIntervalSinceNow: 1)
         }
@@ -36,7 +36,7 @@ class DeadlineController: UIViewController {
     }
     
     @IBAction func previousPressed(_ sender: Any) {
-        delegate?.previousStep()
+        navigationController?.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func finishPressed(_ sender: Any) {
@@ -48,5 +48,4 @@ class DeadlineController: UIViewController {
     @IBAction func cancelPressed(_ sender: Any) {
         navigationController?.isNavigationBarHidden = false
         delegate?.cancel()
-    }
-}
+    }}

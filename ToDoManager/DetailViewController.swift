@@ -147,14 +147,6 @@ class DetailViewController: UIViewController, EditTaskDelegate {
         }
     }
     
-    func nextStep(task: Task) {
-        
-    }
-    
-    func previousStep() {
-        navigationController?.navigationController?.popViewController(animated: true)
-    }
-    
     func finish(task: Task) {
         self.detailItem = task
         navigationController?.navigationController?.popToViewController(self, animated: true)

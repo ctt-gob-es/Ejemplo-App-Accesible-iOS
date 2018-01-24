@@ -12,7 +12,6 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
 
     var detailViewController: DetailViewController? = nil
     var objects = TaskList()
-    var tempTask: Task?
 
 
     override func viewDidLoad() {
@@ -43,7 +42,6 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
 
     @objc
     func insertNewObject(_ sender: Any) {
-        tempTask = Task()
         performSegue(withIdentifier: "createTask", sender: self)
     }
 
@@ -62,13 +60,9 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         } else if segue.identifier == "createTask" {
-            let controller = segue.destination as! EditTaskController
+            let controller = (segue.destination as! UINavigationController).topViewController as! EditTaskController
             controller.delegate = self
-            controller.task = tempTask?.copy() as! Task
-        } else if segue.identifier == "setDeadline" {
-            let controller = segue.destination as! DeadlineController
-            controller.delegate = self
-            controller.task = tempTask
+            controller.task = Task()
         }
     }
 
@@ -136,43 +130,26 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
      func updateTask(task: Task, position pos: IndexPath) {
         let updated = self.objects.setTask(task: task)
         if updated {
-        self.tableView.beginUpdates()
         self.tableView.reloadRows(at: [pos], with: UITableViewRowAnimation.automatic)
-        self.tableView.endUpdates()
         }
         }
     
      func insertTask(task: Task) {
         self.objects.addTask(task)
-        self.tableView.beginUpdates()
         self.tableView.reloadData()
-        self.tableView.endUpdates()
     }
     
      func reloadTasks() {
-        self.tableView.beginUpdates()
         self.tableView.reloadData()
-        self.tableView.endUpdates()
-    }
-
-    func nextStep(task: Task) {
-        tempTask = task
-        performSegue(withIdentifier: "setDeadline", sender: self)
-    }
-    
-    func previousStep() {
-        navigationController?.popViewController(animated: true)
     }
     
     func finish(task: Task) {
         insertTask(task: task)
-        tempTask = nil
-        navigationController?.popToViewController(self, animated: true)
+        navigationController?.popToViewController(self, animated: false)
     }
     
     func cancel() {
-        tempTask = nil
-        navigationController?.popToViewController(self, animated: true)
+        navigationController?.popToViewController(self, animated: false)
     }
 }
 

@@ -9,8 +9,6 @@
 import Foundation
 
 protocol EditTaskDelegate {
-    func nextStep(task: Task)
-    func previousStep()
     func cancel()
     func finish(task: Task)
 }
