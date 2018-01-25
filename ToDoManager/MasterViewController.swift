@@ -109,6 +109,8 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
             formatter.dateStyle = .short
             formatter.timeStyle = .none
             cell.deadline.text = formatter.string(from: task!.deadline!)
+        } else {
+            cell.deadline.text = ""
         }
         return cell
     }

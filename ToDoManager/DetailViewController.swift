@@ -25,14 +25,7 @@ class DetailViewController: UIViewController, EditTaskDelegate {
     @IBOutlet weak var completionSlider: UISlider!
 
     var position: IndexPath?
-     var detailItem: Task? {
-        didSet {
-            // Update the view.
-            if self.isViewLoaded {
-                configureView()
-            }
-        }
-    }
+     var detailItem: Task?
     var taskListDelegate: TaskListDelegate?
     
     func configureView() {
@@ -86,14 +79,25 @@ class DetailViewController: UIViewController, EditTaskDelegate {
 
         navigationItem.leftBarButtonItems = [saveButton]
         navigationItem.rightBarButtonItems = [editButton, cancelButton, completeButton]
-        configureView()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        configureView()
+    }
+    
   	  override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editTask" {
+            let controller = (segue.destination as! UINavigationController).topViewController as! EditTaskController
+            controller.delegate = self
+            controller.task = detailItem!.copy() as! Task
+        }
+    }
+    
     @objc func cancelTask(_ sender: Any) {
         let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to cancel this task?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
@@ -123,7 +127,7 @@ class DetailViewController: UIViewController, EditTaskDelegate {
     }
 
     @objc func editTask(_ sender: Any) {
-        
+        performSegue(withIdentifier: "editTask", sender: self)
     }
     
     @objc func saveTask(_ sender: Any) {
@@ -150,12 +154,13 @@ class DetailViewController: UIViewController, EditTaskDelegate {
     }
     
     func finish(task: Task) {
-        self.detailItem = task
-        navigationController?.navigationController?.popToViewController(self, animated: true)
+        detailItem = task
+        taskListDelegate?.updateTask(task: task, position: position!)
+        navigationController?.navigationController?.popToRootViewController(animated: true)
     }
     
     func cancel() {
-        navigationController?.navigationController?.popToViewController(self, animated: true)
+        navigationController?.navigationController?.popToRootViewController(animated: true)
     }
     
 }
