@@ -20,7 +20,9 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         objects.fillDefault()
         // Do any additional setup after loading the view, typically from a nib.
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
+        let optionsButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showOptionsMenu(_:)))
         navigationItem.rightBarButtonItem = addButton
+        navigationItem.leftBarButtonItem = optionsButton
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -66,6 +68,25 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         }
     }
 
+    @objc
+    func showOptionsMenu(_ sender: Any) {
+        let dialog = UIAlertController(title: "Options", message: "Choose an option...", preferredStyle: .actionSheet)
+        let help = UIAlertAction(title: "Help", style:.default, handler: {(action) -> Void in
+            // Todo
+        })
+        let contact = UIAlertAction(title: "Contact us", style: .default, handler: {(action) -> Void in
+// Todo
+        })
+            let cancel = UIAlertAction(title: "Close", style: .cancel, handler: {(action) -> Void in
+            //Nothing to do.
+        })
+        dialog.addAction(help)
+        dialog.addAction(contact)
+        dialog.addAction(cancel)
+        self.present(dialog, animated: true, completion: nil)
+    }
+
+    
     // MARK: - Table View
 
     override func numberOfSections(in tableView: UITableView) -> Int {

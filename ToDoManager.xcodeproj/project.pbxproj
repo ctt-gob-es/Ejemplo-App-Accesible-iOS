@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D0D0B8B2019FE2C00AA73B1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D0D0B8A2019FE2C00AA73B1 /* Settings.bundle */; };
 		9D1B8BB61FBDADA30023A431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B8BB51FBDADA30023A431 /* AppDelegate.swift */; };
 		9D1B8BB81FBDADA30023A431 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B8BB71FBDADA30023A431 /* MasterViewController.swift */; };
 		9D1B8BBA1FBDADA30023A431 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B8BB91FBDADA30023A431 /* DetailViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D0D0B8A2019FE2C00AA73B1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9D1B8BB21FBDADA30023A431 /* ToDoManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1B8BB51FBDADA30023A431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D1B8BB71FBDADA30023A431 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				9D1B8BB51FBDADA30023A431 /* AppDelegate.swift */,
 				9D1B8BB71FBDADA30023A431 /* MasterViewController.swift */,
 				9D1B8BB91FBDADA30023A431 /* DetailViewController.swift */,
+				9D0D0B8A2019FE2C00AA73B1 /* Settings.bundle */,
 				9D1B8BBB1FBDADA30023A431 /* Main.storyboard */,
 				9D1B8BBE1FBDADA30023A431 /* Assets.xcassets */,
 				9D1B8BC01FBDADA30023A431 /* LaunchScreen.storyboard */,
@@ -210,6 +213,7 @@
 				9DB967E61FE91A18008F0603 /* license.md in Resources */,
 				9D1B8BBF1FBDADA30023A431 /* Assets.xcassets in Resources */,
 				9DB967E51FE91A18008F0603 /* readme.md in Resources */,
+				9D0D0B8B2019FE2C00AA73B1 /* Settings.bundle in Resources */,
 				9D1B8BBD1FBDADA30023A431 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
