@@ -72,10 +72,10 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
     func showOptionsMenu(_ sender: Any) {
         let dialog = UIAlertController(title: "Options", message: "Choose an option...", preferredStyle: .actionSheet)
         let help = UIAlertAction(title: "Help", style:.default, handler: {(action) -> Void in
-            // Todo
+            self.performSegue(withIdentifier: "showHelp", sender: self)
         })
         let contact = UIAlertAction(title: "Contact us", style: .default, handler: {(action) -> Void in
-// Todo
+self.performSegue(withIdentifier: "showContactForm", sender: self)
         })
             let cancel = UIAlertAction(title: "Close", style: .cancel, handler: {(action) -> Void in
             //Nothing to do.

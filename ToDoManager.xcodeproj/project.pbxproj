@@ -23,6 +23,8 @@
 		9D89CB132007518700785781 /* taskListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D89CB122007518700785781 /* taskListDelegate.swift */; };
 		9DB967E51FE91A18008F0603 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 9DB967E31FE91A18008F0603 /* readme.md */; };
 		9DB967E61FE91A18008F0603 /* license.md in Resources */ = {isa = PBXBuildFile; fileRef = 9DB967E41FE91A18008F0603 /* license.md */; };
+		9DF806EC201B4769005ABCDA /* HelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF806EB201B4769005ABCDA /* HelpController.swift */; };
+		9DF806EE201B477A005ABCDA /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF806ED201B477A005ABCDA /* ContactController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		9D89CB122007518700785781 /* taskListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskListDelegate.swift; sourceTree = "<group>"; };
 		9DB967E31FE91A18008F0603 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		9DB967E41FE91A18008F0603 /* license.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = license.md; sourceTree = "<group>"; };
+		9DF806EB201B4769005ABCDA /* HelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpController.swift; sourceTree = "<group>"; };
+		9DF806ED201B477A005ABCDA /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				9D818136200F449C00C25AE4 /* EditTaskController.swift */,
 				9D818138200F44DC00C25AE4 /* DeadlineController.swift */,
 				9D81813A200F453600C25AE4 /* EditTaskDelegate.swift */,
+				9DF806EB201B4769005ABCDA /* HelpController.swift */,
+				9DF806ED201B477A005ABCDA /* ContactController.swift */,
 			);
 			path = ToDoManager;
 			sourceTree = "<group>";
@@ -238,7 +244,9 @@
 				9D81813B200F453600C25AE4 /* EditTaskDelegate.swift in Sources */,
 				9D818137200F449C00C25AE4 /* EditTaskController.swift in Sources */,
 				9D89CB132007518700785781 /* taskListDelegate.swift in Sources */,
+				9DF806EC201B4769005ABCDA /* HelpController.swift in Sources */,
 				9D818139200F44DC00C25AE4 /* DeadlineController.swift in Sources */,
+				9DF806EE201B477A005ABCDA /* ContactController.swift in Sources */,
 				9D1B8BB61FBDADA30023A431 /* AppDelegate.swift in Sources */,
 				9D1B8BD81FBDAF040023A431 /* TodoList.swift in Sources */,
 			);
