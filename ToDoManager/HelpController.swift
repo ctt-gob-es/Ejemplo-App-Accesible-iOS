@@ -14,9 +14,20 @@ class HelpController: UIViewController {
     
     // MARK: Properties
     @IBOutlet weak var webContainer: WKWebView!
+    let dir = "html/"
+    let pathFile = "help"
+    let ext = "html"
     
-    
-    
-    
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        do{
+        let htmlFile = Bundle.main.path(forResource: pathFile, ofType: ext, inDirectory: dir)
+        let contents = try String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
+        let baseUrl = URL(fileURLWithPath: htmlFile!)
+        webContainer.loadHTMLString(contents, baseURL: baseUrl)
+        } catch {
+            // Nothing.
+        }
+}
+
 }

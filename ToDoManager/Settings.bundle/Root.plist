@@ -8,6 +8,14 @@
 	<array>
 		<dict>
 			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string></string>
+			<key>Key</key>
+			<string>General</string>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
 			<string>Enabled</string>
