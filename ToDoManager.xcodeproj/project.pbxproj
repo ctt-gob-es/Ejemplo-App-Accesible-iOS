@@ -17,6 +17,7 @@
 		9D1B8BCD1FBDADA30023A431 /* ToDoManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B8BCC1FBDADA30023A431 /* ToDoManagerTests.swift */; };
 		9D1B8BD81FBDAF040023A431 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B8BD71FBDAF040023A431 /* TodoList.swift */; };
 		9D3D1C8B1FCF0C4E0099E48D /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3D1C8A1FCF0C4E0099E48D /* TaskTableViewCell.swift */; };
+		9D53DB3A2021D3E200775820 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D53DB3C2021D3E200775820 /* Localizable.strings */; };
 		9D818137200F449C00C25AE4 /* EditTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D818136200F449C00C25AE4 /* EditTaskController.swift */; };
 		9D818139200F44DC00C25AE4 /* DeadlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D818138200F44DC00C25AE4 /* DeadlineController.swift */; };
 		9D81813B200F453600C25AE4 /* EditTaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81813A200F453600C25AE4 /* EditTaskDelegate.swift */; };
@@ -53,6 +54,8 @@
 		9D1B8BCE1FBDADA30023A431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D1B8BD71FBDAF040023A431 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		9D3D1C8A1FCF0C4E0099E48D /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		9D53DB3B2021D3E200775820 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9D53DB3D2021D61300775820 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D818136200F449C00C25AE4 /* EditTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskController.swift; sourceTree = "<group>"; };
 		9D818138200F44DC00C25AE4 /* DeadlineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlineController.swift; sourceTree = "<group>"; };
 		9D81813A200F453600C25AE4 /* EditTaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 				9D81813A200F453600C25AE4 /* EditTaskDelegate.swift */,
 				9DF806EB201B4769005ABCDA /* HelpController.swift */,
 				9DF806ED201B477A005ABCDA /* ContactController.swift */,
+				9D53DB3C2021D3E200775820 /* Localizable.strings */,
 			);
 			path = ToDoManager;
 			sourceTree = "<group>";
@@ -222,6 +226,7 @@
 				9DB967E61FE91A18008F0603 /* license.md in Resources */,
 				9D1B8BBF1FBDADA30023A431 /* Assets.xcassets in Resources */,
 				9DB967E51FE91A18008F0603 /* readme.md in Resources */,
+				9D53DB3A2021D3E200775820 /* Localizable.strings in Resources */,
 				9D0D0B8B2019FE2C00AA73B1 /* Settings.bundle in Resources */,
 				9D8F696B2020601000E2B9FB /* html in Resources */,
 				9D1B8BBD1FBDADA30023A431 /* Main.storyboard in Resources */,
@@ -279,6 +284,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9D1B8BBC1FBDADA30023A431 /* Base */,
+				9D53DB3D2021D61300775820 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -289,6 +295,14 @@
 				9D1B8BC11FBDADA30023A431 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9D53DB3C2021D3E200775820 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D53DB3B2021D3E200775820 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

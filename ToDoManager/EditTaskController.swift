@@ -30,7 +30,7 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     var task: Task?
     var delegate: EditTaskDelegate?
-    let data = ["High priority", "Medium priority", "Low priority"]
+    let data = [NSLocalizedString("highPriority", comment: ""), NSLocalizedString("mediumPriority", comment: ""), NSLocalizedString("lowPriority", comment: "")]
     
     func configureView() {
         titleField.text = task!.name
