@@ -12,7 +12,7 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
 
     var detailViewController: DetailViewController? = nil
     var objects = TaskList()
-
+    var tasks: [Task] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +27,39 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        //Register the settings bundle and add an observer to check if defaults changed
+        registerSettingsBundle()
+        NotificationCenter.default.addObserver(self, selector: #selector(MasterViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        defaultsChanged()
+    }
+    
+    func registerSettingsBundle(){
+        let appDefaults = [String:AnyObject]()
+        UserDefaults.standard.register(defaults: appDefaults)
+    }
+    @objc func defaultsChanged(){
+        reloadTasks()
     }
 
+    func filter() {
+        //Hide completed tasks switch
+        let hideCompleted = UserDefaults.standard.bool(forKey: "hide_completed_tasks_preference")
+        let hideCanceled = UserDefaults.standard.bool(forKey: "hide_canceled_tasks_preference")
+        if hideCompleted && hideCanceled {
+            tasks = objects.list.filter({t in t.status is PendingTask})
+        }
+        else if hideCompleted {
+            tasks = objects.list.filter({t in !(t.status is CompletedTask)})
+        }
+        else if hideCanceled {
+            tasks = objects.list.filter({t in !(t.status is CanceledTask)})
+        }
+        else {
+            tasks = objects.list
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
@@ -52,7 +83,7 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects.getTask(pos: indexPath.row)!
+                let object = tasks[indexPath.row]
                 let o = object.copy() as! Task
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = o
@@ -71,15 +102,20 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
     @objc
     func showOptionsMenu(_ sender: Any) {
         let dialog = UIAlertController(title: "Options", message: "Choose an option...", preferredStyle: .actionSheet)
+        let preferences = UIAlertAction(title: "Preferences", style: .default, handler: {(action) -> Void in
+            UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
+        })
         let help = UIAlertAction(title: "Help", style:.default, handler: {(action) -> Void in
             self.performSegue(withIdentifier: "showHelp", sender: self)
         })
         let contact = UIAlertAction(title: "Contact us", style: .default, handler: {(action) -> Void in
-self.performSegue(withIdentifier: "showContactForm", sender: self)
+            self.performSegue(withIdentifier: "showContactForm", sender: self)
         })
-            let cancel = UIAlertAction(title: "Close", style: .cancel, handler: {(action) -> Void in
+        let cancel = UIAlertAction(title: "Close", style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
         })
+        
+        dialog.addAction(preferences)
         dialog.addAction(help)
         dialog.addAction(contact)
         dialog.addAction(cancel)
@@ -94,7 +130,7 @@ self.performSegue(withIdentifier: "showContactForm", sender: self)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count()
+        return tasks.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,34 +138,34 @@ self.performSegue(withIdentifier: "showContactForm", sender: self)
             fatalError("The cell is not an instance of TaskTableViewCell.")
         }
 
-        let task = objects.getTask(pos: indexPath.row)
+        let task = tasks[indexPath.row]
         cell.task = task
         cell.taskListDelegate = self
         cell.position = indexPath
         
         // Initialization code
-        cell.taskName.text = task!.name
-        switch task!.priority {
+        cell.taskName.text = task.name
+        switch task.priority {
         case Task.HIGH_PRIORITY: cell.taskName.textColor = UIColor.red
         case Task.MEDIUM_PRIORITY: cell.taskName.textColor = UIColor.blue
         case Task.LOW_PRIORITY: cell.taskName.textColor = UIColor.magenta
         default: cell.taskName.textColor = UIColor.blue
         }
-        if let st = task!.status as? CompletedTask {
+        if let st = task.status as? CompletedTask {
             cell.deleteButton.isHidden = true
             cell.completeButton.isHidden = true
             cell.taskName.textColor = UIColor.green
         }
-        else if let st = task!.status as? CanceledTask {
+        else if let st = task.status as? CanceledTask {
             cell.deleteButton.isHidden = true
             cell.completeButton.isHidden = true
             cell.taskName.textColor = UIColor.gray
         }
-        if task!.deadline != nil {
+        if task.deadline != nil {
             let formatter = DateFormatter()
             formatter.dateStyle = .short
             formatter.timeStyle = .none
-            cell.deadline.text = formatter.string(from: task!.deadline!)
+            cell.deadline.text = formatter.string(from: task.deadline!)
         } else {
             cell.deadline.text = ""
         }
@@ -153,16 +189,18 @@ self.performSegue(withIdentifier: "showContactForm", sender: self)
      func updateTask(task: Task, position pos: IndexPath) {
         let updated = self.objects.setTask(task: task)
         if updated {
-        self.tableView.reloadRows(at: [pos], with: UITableViewRowAnimation.automatic)
+        reloadTasks()
         }
         }
     
      func insertTask(task: Task) {
         self.objects.addTask(task)
+        filter()
         self.tableView.reloadData()
     }
     
      func reloadTasks() {
+        filter()
         self.tableView.reloadData()
     }
     
@@ -175,4 +213,5 @@ self.performSegue(withIdentifier: "showContactForm", sender: self)
         navigationController?.popToViewController(self, animated: false)
     }
 }
+
 

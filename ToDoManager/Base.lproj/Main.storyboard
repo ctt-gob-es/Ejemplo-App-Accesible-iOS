@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -250,68 +251,59 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-sp-GyP">
-                                            <rect key="frame" x="16" y="12" width="293" height="30"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOw-ei-2mJ">
+                                            <rect key="frame" x="16" y="11.5" width="343" height="68.5"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="30" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hkj-Tg-wXh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-sp-GyP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="271" height="68.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBU-bZ-00Z">
-                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="30.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subitem 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpa-Xf-zjd">
+                                                            <rect key="frame" x="0.0" y="35.5" width="78" height="33"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="271" id="dAR-Q4-Gmj"/>
+                                                    </constraints>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ELR-tL-mcX">
-                                                    <rect key="frame" x="250" y="0.0" width="43" height="30"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-HD-qb8">
+                                                    <rect key="frame" x="271" y="0.0" width="72" height="68.5"/>
                                                     <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-2W-Qii" userLabel="completeButton">
+                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="31.5"/>
+                                                            <state key="normal" title="Completar"/>
+                                                            <connections>
+                                                                <action selector="completeTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="dKa-HO-jYh"/>
+                                                            </connections>
+                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq6-Di-4bv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
+                                                            <rect key="frame" x="29" y="36.5" width="43" height="32"/>
                                                             <state key="normal" title="Borrar"/>
                                                             <connections>
                                                                 <action selector="deleteTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="nH6-3l-F2G"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                </stackView>
-                                            </subviews>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-HD-qb8">
-                                            <rect key="frame" x="23" y="44" width="312" height="30"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="30" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-Kk-OK6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subitem 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpa-Xf-zjd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZuT-xG-9VU">
-                                                    <rect key="frame" x="240" y="0.0" width="72" height="30"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-2W-Qii" userLabel="completeButton">
-                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
-                                                            <state key="normal" title="Completar"/>
-                                                            <connections>
-                                                                <action selector="completeTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="dKa-HO-jYh"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="72" id="0vD-Sh-eJ9"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Yny-HD-qb8" secondAttribute="trailing" constant="40" id="6Yb-h6-MLI"/>
-                                        <constraint firstAttribute="trailing" secondItem="OJs-sp-GyP" secondAttribute="trailing" constant="66" id="Hqs-wP-DHi"/>
-                                        <constraint firstItem="OJs-sp-GyP" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" constant="11" id="VOB-Ht-blZ"/>
-                                        <constraint firstAttribute="bottom" secondItem="Yny-HD-qb8" secondAttribute="bottom" constant="16.5" id="buM-YJ-Rku"/>
+                                        <constraint firstItem="yOw-ei-2mJ" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" id="BU4-Fe-eQe"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="yOw-ei-2mJ" secondAttribute="bottom" id="ces-Sb-MhW"/>
+                                        <constraint firstItem="yOw-ei-2mJ" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" id="tGe-Yn-6Kb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="yOw-ei-2mJ" secondAttribute="trailing" id="zVr-AG-KcX"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

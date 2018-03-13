@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  ToDoManager
+
+  Created by DCC on 31/1/18.
+  Copyright © 2018 DCC. All rights reserved.
+*/
+
+"highPriority" = "High priority";
+"mediumPriority" = "Medium priority";
+"lowPriority" = "Low priority";
