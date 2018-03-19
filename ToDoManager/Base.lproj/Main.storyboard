@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzs-L5-hxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="126.38680659670166"/>
+            <point key="canvasLocation" x="2266" y="609"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -252,49 +252,43 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOw-ei-2mJ">
-                                            <rect key="frame" x="16" y="11.5" width="343" height="68.5"/>
+                                            <rect key="frame" x="16" y="12" width="343" height="68"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-sp-GyP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="271" height="68.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="271" height="68"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBU-bZ-00Z">
-                                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="30.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subitem 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpa-Xf-zjd">
-                                                            <rect key="frame" x="0.0" y="35.5" width="78" height="33"/>
+                                                            <rect key="frame" x="0.0" y="35" width="78" height="33"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="271" id="dAR-Q4-Gmj"/>
-                                                    </constraints>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-HD-qb8">
-                                                    <rect key="frame" x="271" y="0.0" width="72" height="68.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-HD-qb8">
+                                                    <rect key="frame" x="271" y="0.0" width="72" height="68"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-2W-Qii" userLabel="completeButton">
-                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="31.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="31"/>
                                                             <state key="normal" title="Completar"/>
                                                             <connections>
                                                                 <action selector="completeTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="dKa-HO-jYh"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq6-Di-4bv">
-                                                            <rect key="frame" x="29" y="36.5" width="43" height="32"/>
+                                                            <rect key="frame" x="0.0" y="36" width="72" height="32"/>
                                                             <state key="normal" title="Borrar"/>
                                                             <connections>
                                                                 <action selector="deleteTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="nH6-3l-F2G"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="72" id="0vD-Sh-eJ9"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                         </stackView>

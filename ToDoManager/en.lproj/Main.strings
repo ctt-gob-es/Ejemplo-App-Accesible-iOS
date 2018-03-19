@@ -1,0 +1,102 @@
+
+/* Class = "UIViewController"; title = "Contact"; ObjectID = "6Gx-dL-mn4"; */
+"6Gx-dL-mn4.title" = "Contact";
+
+/* Class = "UITableViewController"; title = "Master"; ObjectID = "7bK-jq-Zjz"; */
+"7bK-jq-Zjz.title" = "Master";
+
+/* Class = "UIViewController"; title = "Help"; ObjectID = "9WN-hx-MiG"; */
+"9WN-hx-MiG.title" = "Help";
+
+/* Class = "UIButton"; normalTitle = "Finish"; ObjectID = "BhA-DB-pD2"; */
+"BhA-DB-pD2.normalTitle" = "Finish";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "CzP-Uu-uLr"; */
+"CzP-Uu-uLr.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Message:"; ObjectID = "FGM-Dk-SJd"; */
+"FGM-Dk-SJd.text" = "Message:";
+
+/* Class = "UILabel"; text = "Priority: "; ObjectID = "FPv-Sm-jRh"; */
+"FPv-Sm-jRh.text" = "Priority: ";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "JEX-9P-axG"; */
+"JEX-9P-axG.title" = "Detail";
+
+/* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "MUo-2k-yRh"; */
+"MUo-2k-yRh.normalTitle" = "Previous";
+
+/* Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP"; */
+"RMx-3f-FxP.title" = "Master";
+
+/* Class = "UILabel"; text = "Completion: "; ObjectID = "STQ-CB-NLn"; */
+"STQ-CB-NLn.text" = "Completion: ";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Tk0-mH-mVD"; */
+"Tk0-mH-mVD.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Description: "; ObjectID = "XcE-xy-fWd"; */
+"XcE-xy-fWd.text" = "Description: ";
+
+/* Class = "UILabel"; text = "Subitem 0"; ObjectID = "Xpa-Xf-zjd"; */
+"Xpa-Xf-zjd.text" = "Subitem 0";
+
+/* Class = "UIButton"; normalTitle = "Borrar"; ObjectID = "Xq6-Di-4bv"; */
+"Xq6-Di-4bv.normalTitle" = "Borrar";
+
+/* Class = "UINavigationItem"; title = "ToDo Manager"; ObjectID = "Zdf-7t-Un8"; */
+"Zdf-7t-Un8.title" = "ToDo Manager";
+
+/* Class = "UILabel"; text = "Deadline: "; ObjectID = "aI7-Oa-ORb"; */
+"aI7-Oa-ORb.text" = "Deadline: ";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "bQT-Ye-t6h"; */
+"bQT-Ye-t6h.text" = "Email:";
+
+/* Class = "UIButton"; normalTitle = "Completar"; ObjectID = "fA9-2W-Qii"; */
+"fA9-2W-Qii.normalTitle" = "Completar";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "fVO-Mo-jbE"; */
+"fVO-Mo-jbE.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Has deadline"; ObjectID = "fp9-Y0-WVn"; */
+"fp9-Y0-WVn.text" = "Has deadline";
+
+/* Class = "UILabel"; text = "Priority: "; ObjectID = "ibC-Z4-iZY"; */
+"ibC-Z4-iZY.text" = "Priority: ";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "j0L-Dk-UVr"; */
+"j0L-Dk-UVr.text" = "Name:";
+
+/* Class = "UILabel"; text = "Status: "; ObjectID = "ja8-j1-BJ0"; */
+"ja8-j1-BJ0.text" = "Status: ";
+
+/* Class = "UILabel"; text = "Title: "; ObjectID = "ktD-cR-zOp"; */
+"ktD-cR-zOp.text" = "Title: ";
+
+/* Class = "UILabel"; text = "Item 0"; ObjectID = "mBU-bZ-00Z"; */
+"mBU-bZ-00Z.text" = "Item 0";
+
+/* Class = "UIViewController"; title = "setDeadline"; ObjectID = "mJQ-XY-at2"; */
+"mJQ-XY-at2.title" = "setDeadline";
+
+/* Class = "UINavigationItem"; title = "Detail"; ObjectID = "mOI-FS-AaM"; */
+"mOI-FS-AaM.title" = "Detail";
+
+/* Class = "UILabel"; text = "Is complex"; ObjectID = "q89-Gv-Zik"; */
+"q89-Gv-Zik.text" = "Is complex";
+
+/* Class = "UILabel"; text = "Deadline: "; ObjectID = "qTx-0n-4u8"; */
+"qTx-0n-4u8.text" = "Deadline: ";
+
+/* Class = "UILabel"; text = "Title: "; ObjectID = "rB9-bu-FJa"; */
+"rB9-bu-FJa.text" = "Title: ";
+
+/* Class = "UIButton"; normalTitle = "Finish"; ObjectID = "rFd-nm-Iup"; */
+"rFd-nm-Iup.normalTitle" = "Finish";
+
+/* Class = "UILabel"; text = "Description: "; ObjectID = "tFn-fA-zV4"; */
+"tFn-fA-zV4.text" = "Description: ";
+
+/* Class = "UIViewController"; title = "EditTask"; ObjectID = "xvc-Nj-gZD"; */
+"xvc-Nj-gZD.title" = "EditTask";

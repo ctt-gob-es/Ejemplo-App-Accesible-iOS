@@ -82,7 +82,9 @@ class DetailViewController: UIViewController, EditTaskDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        configureView()
+        if detailItem != nil {
+            configureView()
+        }
     }
     
   	  override func didReceiveMemoryWarning() {

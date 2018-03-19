@@ -18,6 +18,12 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         super.viewDidLoad()
         // Initialize the task list.
         objects.fillDefault()
+        
+        //Register the settings bundle and add an observer to check if defaults changed
+        registerSettingsBundle()
+        NotificationCenter.default.addObserver(self, selector: #selector(MasterViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        defaultsChanged()
+        
         // Do any additional setup after loading the view, typically from a nib.
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         let optionsButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showOptionsMenu(_:)))
@@ -26,12 +32,12 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
-        
-        //Register the settings bundle and add an observer to check if defaults changed
-        registerSettingsBundle()
-        NotificationCenter.default.addObserver(self, selector: #selector(MasterViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
-        defaultsChanged()
+            detailViewController?.detailItem = tasks[0]
+            detailViewController?.position = IndexPath(row: 0, section: 0)
+            detailViewController?.taskListDelegate = self
+            detailViewController?.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+            detailViewController?.navigationItem.leftItemsSupplementBackButton = true
+                    }
     }
     
     func registerSettingsBundle(){
@@ -43,7 +49,7 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
     }
 
     func filter() {
-        //Hide completed tasks switch
+        //Hide completed tasks switch and hide canceled tasks switch
         let hideCompleted = UserDefaults.standard.bool(forKey: "hide_completed_tasks_preference")
         let hideCanceled = UserDefaults.standard.bool(forKey: "hide_canceled_tasks_preference")
         if hideCompleted && hideCanceled {
@@ -91,6 +97,7 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
                 controller.taskListDelegate = self
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
+                    detailViewController = controller
             }
         } else if segue.identifier == "createTask" {
             let controller = (segue.destination as! UINavigationController).topViewController as! EditTaskController
@@ -119,6 +126,10 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         dialog.addAction(help)
         dialog.addAction(contact)
         dialog.addAction(cancel)
+        dialog.modalPresentationStyle = .popover
+         let popOver = dialog.popoverPresentationController
+     popOver?.barButtonItem = navigationItem.leftBarButtonItem
+        
         self.present(dialog, animated: true, completion: nil)
     }
 
