@@ -201,6 +201,10 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         let updated = self.objects.setTask(task: task)
         if updated {
         reloadTasks()
+            if splitViewController != nil {
+                self.tableView.selectRow(at: pos, animated: true, scrollPosition: .middle)
+                performSegue(withIdentifier: "showDetail", sender: nil)
+        }
         }
         }
     
