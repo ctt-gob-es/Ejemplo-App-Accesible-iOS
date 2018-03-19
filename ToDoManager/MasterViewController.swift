@@ -221,11 +221,23 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
     
     func finish(task: Task) {
         insertTask(task: task)
-        navigationController?.popToViewController(self, animated: false)
+        if splitViewController == nil {
+            navigationController?.popToViewController(self, animated: true)
+        } else {
+            let pos = IndexPath(row: self.tableView.numberOfRows(inSection: 0) - 1, section: 0)
+            self.tableView.selectRow(at: pos, animated: true, scrollPosition: .bottom)
+            performSegue(withIdentifier: "showDetail", sender: nil)
+        }
     }
     
     func cancel() {
-        navigationController?.popToViewController(self, animated: false)
+        if splitViewController == nil {
+            navigationController?.popToViewController(self, animated: false)
+        } else {
+            let pos = IndexPath(row: 0, section: 0)
+            self.tableView.selectRow(at: pos, animated: true, scrollPosition: .top)
+            performSegue(withIdentifier: "showDetail", sender: nil)
+        }
     }
 }
 
