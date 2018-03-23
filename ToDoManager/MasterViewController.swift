@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDelegate {
+class MasterViewController: UITableViewController, TaskListDelegate {
 
     var detailViewController: DetailViewController? = nil
     var objects = TaskList()
@@ -101,7 +101,6 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
             }
         } else if segue.identifier == "createTask" {
             let controller = (segue.destination as! UINavigationController).topViewController as! EditTaskController
-            controller.delegate = self
             controller.task = Task()
         }
     }
@@ -162,12 +161,12 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         case Task.LOW_PRIORITY: cell.taskName.textColor = UIColor.magenta
         default: cell.taskName.textColor = UIColor.blue
         }
-        if let st = task.status as? CompletedTask {
+        if  task.status is CompletedTask {
             cell.deleteButton.isHidden = true
             cell.completeButton.isHidden = true
             cell.taskName.textColor = UIColor.green
         }
-        else if let st = task.status as? CanceledTask {
+        else if  task.status is CanceledTask {
             cell.deleteButton.isHidden = true
             cell.completeButton.isHidden = true
             cell.taskName.textColor = UIColor.gray
@@ -215,13 +214,21 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         self.tableView.reloadData()
     }
     
-    func finish(task: Task) {
-        insertTask(task: task)
-        navigationController?.popToViewController(self, animated: false)
+    @IBAction func finish(unwindSegue: UIStoryboardSegue) {
+        if let edit = unwindSegue.source as? EditTask {
+            insertTask(task: edit.task!)
+            detailViewController?.detailItem = edit.task
+            if edit.pos == nil {
+                detailViewController?.position = IndexPath(row: tableView.numberOfRows(inSection: 0) - 1, section: 0)
+            } else {
+                detailViewController?.position = edit.pos
+            }
+            detailViewController?.configureView()
+        }
     }
     
-    func cancel() {
-        navigationController?.popToViewController(self, animated: false)
+    @IBAction func cancel(unwindSegue: UIStoryboardSegue) {
+        // Nothing to do.
     }
 }
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, EditTask {
     
     // MARK: Properties
     
@@ -29,7 +29,7 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var finishButton: UIButton!
     
     var task: Task?
-    var delegate: EditTaskDelegate?
+    var pos: IndexPath?
     let data = [NSLocalizedString("highPriority", comment: ""), NSLocalizedString("mediumPriority", comment: ""), NSLocalizedString("lowPriority", comment: "")]
     
     func configureView() {
@@ -57,8 +57,8 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "setDeadline" {
             let controller = (segue.destination as! UINavigationController).topViewController as! DeadlineController
-            controller.delegate = delegate
             controller.task = task
+            controller.pos = pos
         }
     }
     
@@ -91,12 +91,12 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func finishPressed(_ sender: Any) {
         updateTask()
         navigationController?.isNavigationBarHidden = false
-        delegate?.finish(task: task!)
+        
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
         navigationController?.isNavigationBarHidden = false
-        delegate?.cancel()
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, EditTaskDelegate {
+class DetailViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -48,11 +48,11 @@ class DetailViewController: UIViewController, EditTaskDelegate {
         } else {
         deadlineLabel.isHidden = true
         }
-        if let st = detailItem?.status as? CompletedTask {
+        if detailItem?.status is CompletedTask {
             navigationItem.rightBarButtonItems = []
             completionSlider.isHidden = true
             completionLabel.isHidden = true
-        } else if let st = detailItem?.status as? CanceledTask {
+        } else if  detailItem?.status is CanceledTask {
             navigationItem.rightBarButtonItems = []
             completionSlider.isHidden = true
             completionLabel.isHidden = true
@@ -95,8 +95,8 @@ class DetailViewController: UIViewController, EditTaskDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editTask" {
             let controller = (segue.destination as! UINavigationController).topViewController as! EditTaskController
-            controller.delegate = self
-            controller.task = detailItem!.copy() as! Task
+            controller.task = detailItem!.copy() as? Task
+            controller.pos = position
         }
     }
     
@@ -134,7 +134,6 @@ class DetailViewController: UIViewController, EditTaskDelegate {
     
     @objc func saveTask(_ sender: Any) {
         taskListDelegate?.updateTask(task: self.detailItem!, position: self.position!)
-        navigationController?.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func completionChanged(_ sender: Any) {
@@ -155,15 +154,6 @@ class DetailViewController: UIViewController, EditTaskDelegate {
         }
     }
     
-    func finish(task: Task) {
-        detailItem = task
-        taskListDelegate?.updateTask(task: task, position: position!)
-        navigationController?.navigationController?.popToRootViewController(animated: true)
-    }
-    
-    func cancel() {
-        navigationController?.navigationController?.popToRootViewController(animated: true)
-    }
     
 }
 

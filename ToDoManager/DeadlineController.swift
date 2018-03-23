@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-class DeadlineController: UIViewController {
+class DeadlineController: UIViewController, EditTask {
     
     // MARK: properties
     
     @IBOutlet weak var deadlineField: UIDatePicker!
     
     var task: Task?
-    var delegate: EditTaskDelegate?
-    
+    var pos: IndexPath?
+
     func configureView() {
         deadlineField.minimumDate = Date()
         if task!.deadline != nil {
@@ -42,10 +42,10 @@ class DeadlineController: UIViewController {
     @IBAction func finishPressed(_ sender: Any) {
         task!.deadline = deadlineField.date
         navigationController?.isNavigationBarHidden = false
-        delegate?.finish(task: task!)
+        
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
         navigationController?.isNavigationBarHidden = false
-        delegate?.cancel()
+        
     }}
