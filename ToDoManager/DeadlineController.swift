@@ -40,12 +40,16 @@ class DeadlineController: UIViewController, EditTask {
     }
     
     @IBAction func finishPressed(_ sender: Any) {
-        task!.deadline = deadlineField.date
+        
         navigationController?.isNavigationBarHidden = false
         
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
         navigationController?.isNavigationBarHidden = false
-        
-    }}
+    }
+    
+    func saveTask() {
+        task!.deadline = deadlineField.date
+    }
+}

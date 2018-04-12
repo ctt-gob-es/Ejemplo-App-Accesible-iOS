@@ -110,4 +110,12 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return data[row]
     }
+    
+    @IBAction func previous(unwindSegue: UIStoryboardSegue) {
+        // Nothing to do.
+    }
+    
+    func saveTask() {
+        updateTask()
+    }
 }

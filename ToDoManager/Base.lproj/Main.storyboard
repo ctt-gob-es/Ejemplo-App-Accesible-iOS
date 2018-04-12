@@ -98,7 +98,7 @@
                         <outlet property="priorityLabel" destination="ibC-Z4-iZY" id="YRI-Wn-Ku2"/>
                         <outlet property="statusLabel" destination="ja8-j1-BJ0" id="Kg9-JS-h2O"/>
                         <outlet property="titleLabel" destination="ktD-cR-zOp" id="iLd-5g-6Wa"/>
-                        <segue destination="ARa-k0-zrP" kind="show" identifier="editTask" action="showDetailViewController:sender:" id="sPv-ye-h8g"/>
+                        <segue destination="ARa-k0-zrP" kind="showDetail" identifier="editTask" id="sPv-ye-h8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -182,7 +182,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
-                                    <action selector="finishPressed:" destination="xvc-Nj-gZD" eventType="touchUpInside" id="kyp-I1-dSh"/>
+                                    <segue destination="btt-Ym-35o" kind="unwind" unwindAction="finishWithUnwindSegue:" id="LVD-8B-PzE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzP-Uu-uLr">
@@ -198,7 +198,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="cancelPressed:" destination="xvc-Nj-gZD" eventType="touchUpInside" id="3J3-gl-EM8"/>
+                                    <segue destination="btt-Ym-35o" kind="unwind" unwindAction="cancelWithUnwindSegue:" id="vdK-OJ-O5i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -214,10 +214,11 @@
                         <outlet property="nextButton" destination="CzP-Uu-uLr" id="Rd4-7J-ZAf"/>
                         <outlet property="priorityField" destination="xhJ-qh-MbA" id="E99-FO-BiM"/>
                         <outlet property="titleField" destination="yNQ-Hl-kDJ" id="GGQ-hx-CWH"/>
-                        <segue destination="qvm-df-Bmr" kind="show" identifier="setDeadline" action="showDetailViewController:sender:" id="OAi-Bs-JqE"/>
+                        <segue destination="qvm-df-Bmr" kind="showDetail" identifier="setDeadline" id="OAi-Bs-JqE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzs-L5-hxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="btt-Ym-35o" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2266" y="609"/>
         </scene>
@@ -318,9 +319,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDo Manager" id="Zdf-7t-Un8"/>
                     <connections>
-                        <segue destination="ARa-k0-zrP" kind="show" identifier="createTask" action="showDetailViewController:sender:" id="7p6-fz-THF"/>
-                        <segue destination="4ZT-xb-NUp" kind="show" identifier="showHelp" id="Dex-sP-ngU"/>
-                        <segue destination="yMz-9u-9uf" kind="show" identifier="showContactForm" id="X43-if-i7s"/>
+                        <segue destination="ARa-k0-zrP" kind="showDetail" identifier="createTask" id="7p6-fz-THF"/>
+                        <segue destination="4ZT-xb-NUp" kind="showDetail" identifier="showHelp" action="showViewController:sender:" id="Dex-sP-ngU"/>
+                        <segue destination="yMz-9u-9uf" kind="showDetail" identifier="showContactForm" action="showViewController:sender:" id="X43-if-i7s"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -468,7 +469,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
-                                    <action selector="finishPressed:" destination="mJQ-XY-at2" eventType="touchUpInside" id="3kG-Ow-suR"/>
+                                    <segue destination="7OH-tb-ex8" kind="unwind" unwindAction="finishWithUnwindSegue:" id="iDt-R9-2rk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUo-2k-yRh">
@@ -476,7 +477,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Previous"/>
                                 <connections>
-                                    <action selector="previousPressed:" destination="mJQ-XY-at2" eventType="touchUpInside" id="1iK-9c-czE"/>
+                                    <segue destination="7OH-tb-ex8" kind="unwind" unwindAction="previousWithUnwindSegue:" id="blT-XK-RG5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVO-Mo-jbE">
@@ -484,7 +485,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="cancelPressed:" destination="mJQ-XY-at2" eventType="touchUpInside" id="s73-HJ-rKP"/>
+                                    <segue destination="7OH-tb-ex8" kind="unwind" unwindAction="cancelWithUnwindSegue:" id="5S4-zm-jpj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -497,6 +498,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEO-go-7a7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7OH-tb-ex8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2812" y="125.4872563718141"/>
         </scene>
@@ -506,7 +508,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ARa-k0-zrP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ufo-kz-hTF">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -524,7 +525,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qvm-df-Bmr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X7e-cm-70N">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -574,7 +574,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7p6-fz-THF"/>
+        <segue reference="sPv-ye-h8g"/>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>

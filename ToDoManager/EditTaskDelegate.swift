@@ -11,4 +11,5 @@ import Foundation
 protocol EditTask {
     var task: Task? { get set }
     var pos: IndexPath? { get set }
+    func saveTask()
 }
