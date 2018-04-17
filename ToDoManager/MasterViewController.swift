@@ -232,7 +232,6 @@ class MasterViewController: UITableViewController, TaskListDelegate {
     
     @IBAction func cancel(unwindSegue: UIStoryboardSegue) {
         // Nothing to do.
-        navigationController?.isNavigationBarHidden = false
     }
 }
 

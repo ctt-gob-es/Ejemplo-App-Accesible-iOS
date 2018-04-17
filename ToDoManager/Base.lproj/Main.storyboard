@@ -98,7 +98,7 @@
                         <outlet property="priorityLabel" destination="ibC-Z4-iZY" id="YRI-Wn-Ku2"/>
                         <outlet property="statusLabel" destination="ja8-j1-BJ0" id="Kg9-JS-h2O"/>
                         <outlet property="titleLabel" destination="ktD-cR-zOp" id="iLd-5g-6Wa"/>
-                        <segue destination="xvc-Nj-gZD" kind="showDetail" identifier="editTask" id="ueJ-lj-v6O"/>
+                        <segue destination="xvc-Nj-gZD" kind="presentation" identifier="editTask" id="ueJ-lj-v6O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -191,7 +191,7 @@
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextPressed:" destination="xvc-Nj-gZD" eventType="touchUpInside" id="hxR-PK-QTr"/>
-                                    <segue destination="mJQ-XY-at2" kind="showDetail" identifier="setDeadline" id="Ti9-Ro-cuU"/>
+                                    <segue destination="mJQ-XY-at2" kind="presentation" identifier="setDeadline" id="Ti9-Ro-cuU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tk0-mH-mVD">
@@ -319,9 +319,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDo Manager" id="Zdf-7t-Un8"/>
                     <connections>
-                        <segue destination="xvc-Nj-gZD" kind="showDetail" identifier="createtask" id="4kF-6Q-l1t"/>
-                        <segue destination="9WN-hx-MiG" kind="showDetail" identifier="showHelp" id="8Jr-OY-2t5"/>
-                        <segue destination="6Gx-dL-mn4" kind="showDetail" identifier="showContactForm" id="ZKy-yw-yXR"/>
+                        <segue destination="xvc-Nj-gZD" kind="presentation" identifier="createtask" id="4kF-6Q-l1t"/>
+                        <segue destination="9WN-hx-MiG" kind="presentation" identifier="showHelp" id="8Jr-OY-2t5"/>
+                        <segue destination="6Gx-dL-mn4" kind="presentation" identifier="showContactForm" id="ZKy-yw-yXR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -514,7 +514,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
-        <segue reference="4kF-6Q-l1t"/>
+        <segue reference="Tll-UG-LXB"/>
+        <segue reference="ueJ-lj-v6O"/>
     </inferredMetricsTieBreakers>
 </document>
