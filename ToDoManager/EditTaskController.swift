@@ -51,12 +51,12 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         priorityField.dataSource = self
         priorityField.delegate = self
         configureView()
-        navigationController?.isNavigationBarHidden = true
+        // navigationController?.isNavigationBarHidden = true
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "setDeadline" {
-            let controller = (segue.destination as! UINavigationController).topViewController as! DeadlineController
+            let controller = segue.destination as! DeadlineController
             controller.task = task
             controller.pos = pos
         }
@@ -88,18 +88,7 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         performSegue(withIdentifier: "setDeadline", sender: self)
     }
     
-    @IBAction func finishPressed(_ sender: Any) {
-        updateTask()
-        navigationController?.isNavigationBarHidden = false
-        
-    }
-    
-    @IBAction func cancelPressed(_ sender: Any) {
-        navigationController?.isNavigationBarHidden = false
-        
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+      func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     

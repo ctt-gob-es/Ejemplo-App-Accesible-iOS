@@ -29,24 +29,9 @@ class DeadlineController: UIViewController, EditTask {
     
     override func viewDidLoad() {
         configureView()
-        navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func deadlineChanged(_ sender: Any) {
-    }
-    
-    @IBAction func previousPressed(_ sender: Any) {
-        navigationController?.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func finishPressed(_ sender: Any) {
-        
-        navigationController?.isNavigationBarHidden = false
-        
-    }
-    
-    @IBAction func cancelPressed(_ sender: Any) {
-        navigationController?.isNavigationBarHidden = false
     }
     
     func saveTask() {

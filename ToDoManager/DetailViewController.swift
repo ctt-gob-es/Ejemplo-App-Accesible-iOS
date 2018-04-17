@@ -94,7 +94,7 @@ class DetailViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editTask" {
-            let controller = (segue.destination as! UINavigationController).topViewController as! EditTaskController
+            let controller = segue.destination as! EditTaskController
             controller.task = detailItem!.copy() as? Task
             controller.pos = position
         }
