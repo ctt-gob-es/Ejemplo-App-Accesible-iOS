@@ -31,6 +31,9 @@ class ContactController: UIViewController {
         })
         dialog.addAction(ok)
         dialog.addAction(cancel)
+        dialog.modalPresentationStyle = .popover
+        let popOver = dialog.popoverPresentationController
+        popOver?.sourceView = sender as? UIButton
         self.present(dialog, animated: true, completion: nil)
     }
     
