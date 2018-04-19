@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDelegate {
+class MasterViewController: UITableViewController, TaskListDelegate {
 
     var detailViewController: DetailViewController? = nil
     var objects = TaskList()
@@ -100,8 +100,7 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
                     detailViewController = controller
             }
         } else if segue.identifier == "createTask" {
-            let controller = (segue.destination as! UINavigationController).topViewController as! EditTaskController
-            controller.delegate = self
+            let controller = segue.destination as! EditTaskController
             controller.task = Task()
         }
     }
@@ -162,12 +161,12 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         case Task.LOW_PRIORITY: cell.taskName.textColor = UIColor.magenta
         default: cell.taskName.textColor = UIColor.blue
         }
-        if let st = task.status as? CompletedTask {
+        if  task.status is CompletedTask {
             cell.deleteButton.isHidden = true
             cell.completeButton.isHidden = true
             cell.taskName.textColor = UIColor.green
         }
-        else if let st = task.status as? CanceledTask {
+        else if  task.status is CanceledTask {
             cell.deleteButton.isHidden = true
             cell.completeButton.isHidden = true
             cell.taskName.textColor = UIColor.gray
@@ -201,10 +200,10 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         let updated = self.objects.setTask(task: task)
         if updated {
         reloadTasks()
-            if splitViewController != nil {
+            /* if splitViewController != nil {
                 self.tableView.selectRow(at: pos, animated: true, scrollPosition: .middle)
                 performSegue(withIdentifier: "showDetail", sender: nil)
-        }
+        } */
         }
         }
     
@@ -219,25 +218,22 @@ class MasterViewController: UITableViewController, TaskListDelegate, EditTaskDel
         self.tableView.reloadData()
     }
     
-    func finish(task: Task) {
-        insertTask(task: task)
-        if splitViewController == nil {
-            navigationController?.popToViewController(self, animated: true)
-        } else {
-            let pos = IndexPath(row: self.tableView.numberOfRows(inSection: 0) - 1, section: 0)
-            self.tableView.selectRow(at: pos, animated: true, scrollPosition: .bottom)
-            performSegue(withIdentifier: "showDetail", sender: nil)
+    @IBAction func finish(unwindSegue: UIStoryboardSegue) {
+        if let edit = unwindSegue.source as? EditTask {
+            detailViewController?.detailItem = edit.task
+            if edit.pos == nil {
+                detailViewController?.position = IndexPath(row: tableView.numberOfRows(inSection: 0) - 1, section: 0)
+                insertTask(task: edit.task!)
+            } else {
+                updateTask(task: edit.task!, position: edit.pos!)
+                detailViewController?.position = edit.pos
+            }
+            detailViewController?.configureView()
         }
     }
     
-    func cancel() {
-        if splitViewController == nil {
-            navigationController?.popToViewController(self, animated: false)
-        } else {
-            let pos = IndexPath(row: 0, section: 0)
-            self.tableView.selectRow(at: pos, animated: true, scrollPosition: .top)
-            performSegue(withIdentifier: "showDetail", sender: nil)
-        }
+    @IBAction func cancel(unwindSegue: UIStoryboardSegue) {
+        // Nothing to do.
     }
 }
 
