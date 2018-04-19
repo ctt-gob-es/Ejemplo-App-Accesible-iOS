@@ -216,7 +216,6 @@ class MasterViewController: UITableViewController, TaskListDelegate {
     
     @IBAction func finish(unwindSegue: UIStoryboardSegue) {
         if let edit = unwindSegue.source as? EditTask {
-            edit.saveTask()
             detailViewController?.detailItem = edit.task
             if edit.pos == nil {
                 detailViewController?.position = IndexPath(row: tableView.numberOfRows(inSection: 0) - 1, section: 0)
@@ -226,7 +225,6 @@ class MasterViewController: UITableViewController, TaskListDelegate {
                 detailViewController?.position = edit.pos
             }
             detailViewController?.configureView()
-            navigationController?.isNavigationBarHidden = false
         }
     }
     

@@ -34,7 +34,10 @@ class DeadlineController: UIViewController, EditTask {
     @IBAction func deadlineChanged(_ sender: Any) {
     }
     
-    func saveTask() {
-        task!.deadline = deadlineField.date
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "finish" {
+            task!.deadline = deadlineField.date
+        }
     }
-}
+    
+    }

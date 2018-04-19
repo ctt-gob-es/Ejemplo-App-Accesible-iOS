@@ -59,6 +59,8 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             let controller = segue.destination as! DeadlineController
             controller.task = task
             controller.pos = pos
+        } else if segue.identifier == "finish" {
+            updateTask()
         }
     }
     
@@ -104,7 +106,4 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         // Nothing to do.
     }
     
-    func saveTask() {
-        updateTask()
-    }
 }

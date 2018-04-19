@@ -153,6 +153,17 @@ class DetailViewController: UIViewController {
             self.present(dialog, animated: true, completion: nil)
         }
     }
+
+    @IBAction func finish(unwindSegue: UIStoryboardSegue) {
+        if let edit = unwindSegue.source as? EditTask {
+            detailItem = edit.task
+            configureView()
+        }
+    }
     
+    @IBAction func cancel(unwindSegue: UIStoryboardSegue) {
+        // Nothing to do.
+    }
+
 }
 
