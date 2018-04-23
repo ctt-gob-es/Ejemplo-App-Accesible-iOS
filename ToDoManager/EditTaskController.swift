@@ -102,7 +102,10 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     @IBAction func previous(unwindSegue: UIStoryboardSegue) {
-        // Nothing to do.
+        if let deadline = unwindSegue.source as? DeadlineController {
+            task = deadline.task
+            configureView()
+        }
     }
     
 }
