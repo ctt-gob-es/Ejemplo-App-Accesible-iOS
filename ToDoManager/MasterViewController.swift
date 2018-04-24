@@ -26,6 +26,7 @@ class MasterViewController: UITableViewController, TaskListDelegate {
         
         // Do any additional setup after loading the view, typically from a nib.
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
+        addButton.accessibilityHint = NSLocalizedString("addTaskHint", comment: "")
         let optionsButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showOptionsMenu(_:)))
         navigationItem.rightBarButtonItem = addButton
         navigationItem.leftBarButtonItem = optionsButton

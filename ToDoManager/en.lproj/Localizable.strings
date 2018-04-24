@@ -17,3 +17,4 @@
 "noButton" = "No";
 "okButton" = "OK";
 "cancelButton" = "Cancel";
+"addTaskHint" = "Opens an empty form to create a new task.";
