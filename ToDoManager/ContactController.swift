@@ -18,23 +18,49 @@ class ContactController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        nameField.accessibilityLabel = NSLocalizedString("j0L-Dk-UVr.text", comment: "Same as nameLabel.")
+        emailField.accessibilityLabel = NSLocalizedString("bQT-Ye-t6h.text", comment: "Same as emailLabel.")
+        messageField.accessibilityLabel = NSLocalizedString("FGM-Dk-SJd.text", comment: "Same as messageLabel.")
+    }
+    
+    func validForm()-> Bool {
+        if !((nameField.text?.isEmpty == true) || (emailField.text?.isEmpty == true) || (messageField.text.isEmpty == true)) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     @IBAction func send(_ sender: Any) {
-        let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to send this message to our support team?", preferredStyle: .actionSheet)
-        let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
-            self.performSegue(withIdentifier: "close", sender: self)
-        })
-        let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
-            //Nothing to do.
-        })
-        dialog.addAction(ok)
-        dialog.addAction(cancel)
-        dialog.modalPresentationStyle = .popover
-        let popOver = dialog.popoverPresentationController
-        popOver?.sourceView = sender as? UIButton
-        self.present(dialog, animated: true, completion: nil)
+        if validForm() {
+            let dialog = UIAlertController(title: NSLocalizedString("contactConfirmtitle", comment: ""), message: NSLocalizedString("contactConfirmMessage", comment: ""), preferredStyle: .actionSheet)
+            let ok = UIAlertAction(title: NSLocalizedString("yesButton", comment: ""), style:.default, handler: {(action) -> Void in
+                self.performSegue(withIdentifier: "close", sender: self)
+            })
+            let cancel = UIAlertAction(title: NSLocalizedString("noButton", comment: ""), style: .cancel, handler: {(action) -> Void in
+                //Nothing to do.
+            })
+            dialog.addAction(ok)
+            dialog.addAction(cancel)
+            dialog.modalPresentationStyle = .popover
+            let popOver = dialog.popoverPresentationController
+            popOver?.sourceView = sender as? UIButton
+            self.present(dialog, animated: true, completion: nil)
+        } else {
+            let dialog = UIAlertController(title: NSLocalizedString("contactErrorTitle", comment: ""), message: NSLocalizedString("contactErrorMessage", comment: ""), preferredStyle: .actionSheet)
+            let ok = UIAlertAction(title: NSLocalizedString("okButton", comment: ""), style:.default, handler: {(action) -> Void in
+                //Nothing to do.
+            })
+            dialog.addAction(ok)
+            dialog.modalPresentationStyle = .popover
+            let popOver = dialog.popoverPresentationController
+            popOver?.sourceView = sender as? UIButton
+            self.present(dialog, animated: true, completion: nil)
+        }
+        
     }
     
     

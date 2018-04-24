@@ -9,3 +9,11 @@
 "highPriority" = "High priority";
 "mediumPriority" = "Medium priority";
 "lowPriority" = "Low priority";
+"contactConfirmTitle" = "Confirm";
+"contactConfirmMessage" = "Are you sure you want to send this message to our support team?";
+"contactErrorTitle" = "Error";
+"contactErrorMessage" = "Some fields are still empty. Please, fill the form.";
+"yesButton" = "Yes";
+"noButton" = "No";
+"okButton" = "OK";
+"cancelButton" = "Cancel";
