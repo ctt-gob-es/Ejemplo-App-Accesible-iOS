@@ -20,3 +20,12 @@
 "addTaskHint" = "Opens an empty form to create a new task.";
 "editErrorTitle" = "Error";
 "editErrorMessage" = "you need to fill the title at least.";
+"completeButton.label" = "Complete";
+"completeButton.hint" = "Marks the task as completed.";
+"cancelButton.label" = "Cancel";
+"cancelButton.hint" = "Marks the task as cancelled.";
+"completeDialog.title" = "Confirm";
+"completeDialog.message" = "Are you sure you want to complete this task?";
+"cancelDialog.title" = "Confirm";
+"cancelDialog.message" = "Are you sure you want to cancel  this task?";
+

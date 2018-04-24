@@ -36,12 +36,12 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     @IBAction func deleteTask(_ sender: Any) {
-        let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to cancel this task?", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
+        let dialog = UIAlertController(title: NSLocalizedString("cancelDialog.title", comment: ""), message: NSLocalizedString("cancelDialog.message", comment: ""), preferredStyle: .alert)
+        let ok = UIAlertAction(title: NSLocalizedString("yesButton", comment: ""), style:.default, handler: {(action) -> Void in
             self.task!.cancel()
             self.taskListDelegate!.updateTask(task: self.task!, position: self.position!)
         })
-        let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
+        let cancel = UIAlertAction(title: NSLocalizedString("noButton", comment: ""), style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
         })
         dialog.addAction(ok)
@@ -50,12 +50,12 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     @IBAction func completeTask(_ sender: Any) {
-        let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to complete this task?", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
+        let dialog = UIAlertController(title: NSLocalizedString("completeDialog.title", comment: ""), message: NSLocalizedString("completeDialog.message", comment: ""), preferredStyle: .alert)
+        let ok = UIAlertAction(title: NSLocalizedString("yesButton", comment: ""), style:.default, handler: {(action) -> Void in
             self.task!.complete()
             self.taskListDelegate!.updateTask(task: self.task!, position: self.position!)
         })
-        let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
+        let cancel = UIAlertAction(title: NSLocalizedString("noButton", comment: ""), style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
         })
         dialog.addAction(ok)

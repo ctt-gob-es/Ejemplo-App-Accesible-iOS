@@ -180,6 +180,10 @@ class MasterViewController: UITableViewController, TaskListDelegate {
         } else {
             cell.deadline.text = ""
         }
+        cell.completeButton.accessibilityLabel = NSLocalizedString("completeButton.label", comment: "")
+        cell.completeButton.accessibilityHint = NSLocalizedString("completeButton.hint", comment: "")
+        cell.deleteButton.accessibilityLabel = NSLocalizedString("cancelButton.label", comment: "")
+        cell.deleteButton.accessibilityHint = NSLocalizedString("cancelButton.hint", comment: "")
         return cell
     }
 
