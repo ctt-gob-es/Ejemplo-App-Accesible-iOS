@@ -18,3 +18,5 @@
 "okButton" = "OK";
 "cancelButton" = "Cancel";
 "addTaskHint" = "Opens an empty form to create a new task.";
+"editErrorTitle" = "Error";
+"editErrorMessage" = "you need to fill the title at least.";

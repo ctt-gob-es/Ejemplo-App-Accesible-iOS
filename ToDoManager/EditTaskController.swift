@@ -53,6 +53,15 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         configureView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        titleField.accessibilityLabel = NSLocalizedString("ktD-cR-zOp.text", comment: "Same as title label.")
+        priorityField.accessibilityLabel = NSLocalizedString("ibC-Z4-iZY.text", comment: "Same as priority label.")
+        descriptionField.accessibilityLabel = NSLocalizedString("tFn-fA-zV4.text", comment: "Same as description label.")
+        complexField.accessibilityLabel = NSLocalizedString("q89-Gv-Zik.text", comment: "Same as complex label.")
+        deadlineField.accessibilityLabel = NSLocalizedString("fp9-Y0-WVn.text", comment: "Same as deadline label.")
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "setDeadline" {
             let controller = segue.destination as! DeadlineController
@@ -84,9 +93,33 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     }
     
+    func validForm() -> Bool {
+        if titleField.text?.isEmpty == true {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func invalidForm(sender: Any) {
+        let dialog = UIAlertController(title: NSLocalizedString("editErrorTitle", comment: ""), message: NSLocalizedString("editErrorMessage", comment: ""), preferredStyle: .actionSheet)
+        let ok = UIAlertAction(title: NSLocalizedString("okButton", comment: ""), style:.default, handler: {(action) -> Void in
+            //Nothing to do.
+        })
+        dialog.addAction(ok)
+        dialog.modalPresentationStyle = .popover
+        let popOver = dialog.popoverPresentationController
+        popOver?.sourceView = sender as? UIButton
+        self.present(dialog, animated: true, completion: nil)
+    }
+    
     @IBAction func nextPressed(_ sender: Any) {
+        if validForm() {
         updateTask()
         performSegue(withIdentifier: "setDeadline", sender: self)
+        } else {
+            invalidForm(sender: nextButton)
+        }
     }
     
       func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -105,6 +138,15 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         if let deadline = unwindSegue.source as? DeadlineController {
             task = deadline.task
             configureView()
+        }
+    }
+    
+    @IBAction func finishPressed(_ sender: Any) {
+        if validForm() {
+            updateTask()
+            performSegue(withIdentifier: "finish", sender: self)
+        } else {
+            invalidForm(sender: nextButton)
         }
     }
     
