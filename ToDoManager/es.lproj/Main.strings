@@ -1,0 +1,111 @@
+
+/* Class = "UIViewController"; title = "Contact"; ObjectID = "6Gx-dL-mn4"; */
+"6Gx-dL-mn4.title" = "Contacto";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "7Bb-24-qI6"; */
+"7Bb-24-qI6.normalTitle" = "Atrás";
+
+/* Class = "UITableViewController"; title = "Master"; ObjectID = "7bK-jq-Zjz"; */
+"7bK-jq-Zjz.title" = "master";
+
+/* Class = "UIViewController"; title = "Help"; ObjectID = "9WN-hx-MiG"; */
+"9WN-hx-MiG.title" = "Ayuda";
+
+/* Class = "UIButton"; normalTitle = "Finish"; ObjectID = "BhA-DB-pD2"; */
+"BhA-DB-pD2.normalTitle" = "Finalizar";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "CzP-Uu-uLr"; */
+"CzP-Uu-uLr.normalTitle" = "Siguiente";
+
+/* Class = "UILabel"; text = "Message:"; ObjectID = "FGM-Dk-SJd"; */
+"FGM-Dk-SJd.text" = "Mensaje:";
+
+/* Class = "UILabel"; text = "Priority: "; ObjectID = "FPv-Sm-jRh"; */
+"FPv-Sm-jRh.text" = "Prioridad:  ";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "I00-Bq-zll"; */
+"I00-Bq-zll.normalTitle" = "Enviar";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "JEX-9P-axG"; */
+"JEX-9P-axG.title" = "Detalles";
+
+/* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "MUo-2k-yRh"; */
+"MUo-2k-yRh.normalTitle" = "Anterior";
+
+/* Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP"; */
+"RMx-3f-FxP.title" = "Master";
+
+/* Class = "UILabel"; text = "Completion: "; ObjectID = "STQ-CB-NLn"; */
+"STQ-CB-NLn.text" = "Completado: ";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Tk0-mH-mVD"; */
+"Tk0-mH-mVD.normalTitle" = "Cancelar";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "V0i-nn-Eyt"; */
+"V0i-nn-Eyt.normalTitle" = "Atrás";
+
+/* Class = "UILabel"; text = "Description: "; ObjectID = "XcE-xy-fWd"; */
+"XcE-xy-fWd.text" = "Descripción: ";
+
+/* Class = "UILabel"; text = "Subitem 0"; ObjectID = "Xpa-Xf-zjd"; */
+"Xpa-Xf-zjd.text" = "Subitem 0";
+
+/* Class = "UIButton"; normalTitle = "Borrar"; ObjectID = "Xq6-Di-4bv"; */
+"Xq6-Di-4bv.normalTitle" = "Borrar";
+
+/* Class = "UINavigationItem"; title = "ToDo Manager"; ObjectID = "Zdf-7t-Un8"; */
+"Zdf-7t-Un8.title" = "Gestor de Tareas";
+
+/* Class = "UILabel"; text = "Deadline: "; ObjectID = "aI7-Oa-ORb"; */
+"aI7-Oa-ORb.text" = "Fecha límite: ";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "bQT-Ye-t6h"; */
+"bQT-Ye-t6h.text" = "Correo electrónico:";
+
+/* Class = "UIButton"; normalTitle = "Completar"; ObjectID = "fA9-2W-Qii"; */
+"fA9-2W-Qii.normalTitle" = "Completar";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "fVO-Mo-jbE"; */
+"fVO-Mo-jbE.normalTitle" = "Cancelar";
+
+/* Class = "UILabel"; text = "Has deadline"; ObjectID = "fp9-Y0-WVn"; */
+"fp9-Y0-WVn.text" = "Tiene fecha límite";
+
+/* Class = "UILabel"; text = "Priority: "; ObjectID = "ibC-Z4-iZY"; */
+"ibC-Z4-iZY.text" = "Prioridad: ";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "j0L-Dk-UVr"; */
+"j0L-Dk-UVr.text" = "Nombre:";
+
+/* Class = "UILabel"; text = "Status: "; ObjectID = "ja8-j1-BJ0"; */
+"ja8-j1-BJ0.text" = "Estado: ";
+
+/* Class = "UILabel"; text = "Title: "; ObjectID = "ktD-cR-zOp"; */
+"ktD-cR-zOp.text" = "Título: ";
+
+/* Class = "UILabel"; text = "Item 0"; ObjectID = "mBU-bZ-00Z"; */
+"mBU-bZ-00Z.text" = "Item 0";
+
+/* Class = "UIViewController"; title = "setDeadline"; ObjectID = "mJQ-XY-at2"; */
+"mJQ-XY-at2.title" = "Seleccionar fecha límite";
+
+/* Class = "UINavigationItem"; title = "Detail"; ObjectID = "mOI-FS-AaM"; */
+"mOI-FS-AaM.title" = "Detalles";
+
+/* Class = "UILabel"; text = "Is complex"; ObjectID = "q89-Gv-Zik"; */
+"q89-Gv-Zik.text" = "Es compleja";
+
+/* Class = "UILabel"; text = "Deadline: "; ObjectID = "qTx-0n-4u8"; */
+"qTx-0n-4u8.text" = "Fecha límite: ";
+
+/* Class = "UILabel"; text = "Title: "; ObjectID = "rB9-bu-FJa"; */
+"rB9-bu-FJa.text" = "título: ";
+
+/* Class = "UIButton"; normalTitle = "Finish"; ObjectID = "rFd-nm-Iup"; */
+"rFd-nm-Iup.normalTitle" = "Finalizar";
+
+/* Class = "UILabel"; text = "Description: "; ObjectID = "tFn-fA-zV4"; */
+"tFn-fA-zV4.text" = "Descripción: ";
+
+/* Class = "UIViewController"; title = "EditTask"; ObjectID = "xvc-Nj-gZD"; */
+"xvc-Nj-gZD.title" = "Editar tarea";

@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  ToDoManager
+
+  Created by DCC on 31/1/18.
+  Copyright © 2018 DCC. All rights reserved.
+*/
+
+"highPriority" = "Prioridad alta";
+"mediumPriority" = "Prioridad media";
+"lowPriority" = "Prioridad baja";
+"contactConfirmTitle" = "Confirmar";
+"contactConfirmMessage" = "¿Está seguro de que desea enviar este mensaje a nuestro equipo de soporte?";
+"contactErrorTitle" = "Error";
+"contactErrorMessage" = "Algunos campos están todavía vacíos. Por favor, rellene el formulario.";
+"yesButton" = "Sí";
+"noButton" = "No";
+"okButton" = "Aceptar";
+"cancelButton" = "Cancelar";
+"addTaskHint" = "Abre un formulario vacío para crear una nueva tarea.";
+"editErrorTitle" = "Error";
+"editErrorMessage" = "Necesita rellenar al menos el título.";
+"completeButton.label" = "Completar";
+"completeButton.hint" = "Marca la tarea como completada.";
+"cancelButton.label" = "Cancelar";
+"cancelButton.hint" = "Marca la tarea como cancelada.";
+"completeDialog.title" = "Confirmar";
+"completeDialog.message" = "¿Está seguro de que desea completar esta tarea?";
+"cancelDialog.title" = "Confirmar";
+"cancelDialog.message" = "¿Está seguro de que desea cancelar esta tarea?";
+

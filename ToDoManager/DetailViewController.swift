@@ -76,7 +76,11 @@ class DetailViewController: UIViewController {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTask(_:)))
         let completeButton = UIBarButtonItem(barButtonSystemItem: .done,  target: self, action: #selector(completeTask(_:)))
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTask(_:)))
-
+completeButton.accessibilityLabel = NSLocalizedString("completeButton.label", comment: "")
+        completeButton.accessibilityHint = NSLocalizedString("completeButton.hint", comment: "")
+        cancelButton.accessibilityLabel = NSLocalizedString("cancelButton.label", comment: "")
+        cancelButton.accessibilityHint = NSLocalizedString("cancelButton.hint", comment: "")
+        
         navigationItem.leftBarButtonItems = [saveButton]
         navigationItem.rightBarButtonItems = [editButton, cancelButton, completeButton]
     }
@@ -101,12 +105,12 @@ class DetailViewController: UIViewController {
     }
     
     @objc func cancelTask(_ sender: Any) {
-        let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to cancel this task?", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
+        let dialog = UIAlertController(title: NSLocalizedString("cancelDialog.title", comment: ""), message: NSLocalizedString("cancelDialog.message", comment: ""), preferredStyle: .alert)
+        let ok = UIAlertAction(title: NSLocalizedString("yesButton", comment: ""), style:.default, handler: {(action) -> Void in
             self.detailItem!.cancel()
             self.configureView()
         })
-        let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
+        let cancel = UIAlertAction(title: NSLocalizedString("noButton", comment: ""), style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
         })
         dialog.addAction(ok)
@@ -115,12 +119,12 @@ class DetailViewController: UIViewController {
     }
 
     @objc func completeTask(_ sender: Any) {
-        let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to complete this task?", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
+        let dialog = UIAlertController(title: NSLocalizedString("completeDialog.title", comment: ""), message: NSLocalizedString("completeDialog.message", comment: ""), preferredStyle: .alert)
+        let ok = UIAlertAction(title: NSLocalizedString("yesButton", comment: ""), style:.default, handler: {(action) -> Void in
             self.detailItem!.complete()
             self.configureView()
         })
-        let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
+        let cancel = UIAlertAction(title: NSLocalizedString("noButton", comment: ""), style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
         })
         dialog.addAction(ok)
@@ -140,12 +144,12 @@ class DetailViewController: UIViewController {
         let completion = Int(self.completionSlider.value)
         detailItem?.completed = completion
         if completion == 100 {
-            let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to complete this task?", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "Yes", style:.default, handler: {(action) -> Void in
+            let dialog = UIAlertController(title: NSLocalizedString("completeDialog.title", comment: ""), message: NSLocalizedString("completeDialog.message", comment: ""), preferredStyle: .alert)
+            let ok = UIAlertAction(title: NSLocalizedString("yesButton", comment: ""), style:.default, handler: {(action) -> Void in
                 self.detailItem!.complete()
                 self.configureView()
             })
-            let cancel = UIAlertAction(title: "No", style: .cancel, handler: {(action) -> Void in
+            let cancel = UIAlertAction(title: NSLocalizedString("noButton", comment: ""), style: .cancel, handler: {(action) -> Void in
                 self.completionSlider.value = 99
                             })
             dialog.addAction(ok)
