@@ -30,20 +30,20 @@ class DetailViewController: UIViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        titleLabel.text = "Title" + ": " + detailItem!.name
+        titleLabel.text = NSLocalizedString("ktD-cR-zOp.text", comment: "") + detailItem!.name
         switch detailItem!.priority {
-        case Task.HIGH_PRIORITY: priorityLabel.text = "Priority" + ": " + "High"
-        case Task.MEDIUM_PRIORITY: priorityLabel.text = "Priority" + ": " + "Medium"
-        case Task.LOW_PRIORITY: priorityLabel.text = "Priority" + ": " + "Low"
+        case Task.HIGH_PRIORITY: priorityLabel.text = NSLocalizedString("FPv-Sm-jRh.text", comment: "") + NSLocalizedString("highPriority", comment: "")
+        case Task.MEDIUM_PRIORITY: priorityLabel.text = NSLocalizedString("FPv-Sm-jRh.text", comment: "") + NSLocalizedString("mediumPriority", comment: "")
+        case Task.LOW_PRIORITY: priorityLabel.text = NSLocalizedString("FPv-Sm-jRh.text", comment: "") + NSLocalizedString("lowPriority", comment: "")
         default: preconditionFailure("Task must not be nil.")
         }
-        statusLabel.text = "Status" + ": " + detailItem!.status.statusDescription
-        descriptionLabel.text = "Description" + ": " + detailItem!.details
+        statusLabel.text = NSLocalizedString("ja8-j1-BJ0.text", comment: "") + detailItem!.status.statusDescription
+        descriptionLabel.text = NSLocalizedString("XcE-xy-fWd.text", comment: "") + detailItem!.details
         if detailItem!.deadline !=   nil {
             let formatter = DateFormatter()
             formatter.dateStyle = .short
             formatter.timeStyle = .none
-            deadlineLabel.text = "Deadline" + ": " + formatter.string(from: detailItem!.deadline!)
+            deadlineLabel.text = NSLocalizedString("aI7-Oa-ORb.text", comment: "") + formatter.string(from: detailItem!.deadline!)
             deadlineLabel.isHidden = false
         } else {
         deadlineLabel.isHidden = true

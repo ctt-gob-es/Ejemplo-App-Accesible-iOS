@@ -28,4 +28,10 @@
 "completeDialog.message" = "Are you sure you want to complete this task?";
 "cancelDialog.title" = "Confirm";
 "cancelDialog.message" = "Are you sure you want to cancel  this task?";
+"help" = "Help";
+"contact" = "Contact us";
+"optionsDialog.title" = "Options";
+"optionsDialog.message" = "Choose an option...";
+"preferences" = "Preferences";
+"close" = "Close";
 

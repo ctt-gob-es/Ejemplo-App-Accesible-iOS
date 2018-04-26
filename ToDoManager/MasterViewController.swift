@@ -108,17 +108,17 @@ class MasterViewController: UITableViewController, TaskListDelegate {
 
     @objc
     func showOptionsMenu(_ sender: Any) {
-        let dialog = UIAlertController(title: "Options", message: "Choose an option...", preferredStyle: .actionSheet)
-        let preferences = UIAlertAction(title: "Preferences", style: .default, handler: {(action) -> Void in
+        let dialog = UIAlertController(title: NSLocalizedString("optionsDialog.title", comment: ""), message: NSLocalizedString("optionsDialog.message", comment: ""), preferredStyle: .actionSheet)
+        let preferences = UIAlertAction(title: NSLocalizedString("preferences", comment: ""), style: .default, handler: {(action) -> Void in
             UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
         })
-        let help = UIAlertAction(title: "Help", style:.default, handler: {(action) -> Void in
+        let help = UIAlertAction(title: NSLocalizedString("help", comment: ""), style:.default, handler: {(action) -> Void in
             self.performSegue(withIdentifier: "showHelp", sender: self)
         })
-        let contact = UIAlertAction(title: "Contact us", style: .default, handler: {(action) -> Void in
+        let contact = UIAlertAction(title: NSLocalizedString("contact", comment: ""), style: .default, handler: {(action) -> Void in
             self.performSegue(withIdentifier: "showContactForm", sender: self)
         })
-        let cancel = UIAlertAction(title: "Close", style: .cancel, handler: {(action) -> Void in
+        let cancel = UIAlertAction(title: NSLocalizedString("close", comment: ""), style: .cancel, handler: {(action) -> Void in
             //Nothing to do.
         })
         

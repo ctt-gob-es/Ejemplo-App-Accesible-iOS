@@ -28,4 +28,9 @@
 "completeDialog.message" = "¿Está seguro de que desea completar esta tarea?";
 "cancelDialog.title" = "Confirmar";
 "cancelDialog.message" = "¿Está seguro de que desea cancelar esta tarea?";
-
+"help" = "Ayuda";
+"contact" = "Contacta con nosotros";
+"optionsDialog.title" = "Opciones";
+"optionsDialog.message" = "elige una opción...";
+"preferences" = "Preferencias";
+"close" = "Cerrar";
