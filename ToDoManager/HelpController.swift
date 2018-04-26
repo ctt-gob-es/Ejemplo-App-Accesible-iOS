@@ -15,7 +15,7 @@ class HelpController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var webContainer: WKWebView!
     let dir = "html/"
-    let pathFile = "help"
+    let pathFile = NSLocalizedString("helpFilePath", comment: "The path changes for each language.")
     let ext = "html"
     
     override func viewDidLoad() {
