@@ -12,6 +12,9 @@ class TaskTableViewCell: UITableViewCell {
     
     //MARK: Properties
     
+    @IBOutlet weak var taskStateIcon: UIImageView!
+    @IBOutlet weak var wraper: UIStackView!
+    
     @IBOutlet weak var taskName: UILabel!
     
     @IBOutlet weak var deadline: UILabel!

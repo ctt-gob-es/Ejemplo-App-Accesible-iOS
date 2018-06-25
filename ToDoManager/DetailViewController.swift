@@ -30,20 +30,20 @@ class DetailViewController: UIViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        titleLabel.text = NSLocalizedString("ktD-cR-zOp.text", comment: "") + detailItem!.name
+        titleLabel.text = NSLocalizedString("titleLabel.text", comment: "") + detailItem!.name
         switch detailItem!.priority {
-        case Task.HIGH_PRIORITY: priorityLabel.text = NSLocalizedString("FPv-Sm-jRh.text", comment: "") + NSLocalizedString("highPriority", comment: "")
-        case Task.MEDIUM_PRIORITY: priorityLabel.text = NSLocalizedString("FPv-Sm-jRh.text", comment: "") + NSLocalizedString("mediumPriority", comment: "")
-        case Task.LOW_PRIORITY: priorityLabel.text = NSLocalizedString("FPv-Sm-jRh.text", comment: "") + NSLocalizedString("lowPriority", comment: "")
+        case Task.HIGH_PRIORITY: priorityLabel.text = NSLocalizedString("priorityLabel.text", comment: "") + NSLocalizedString("highPriority", comment: "")
+        case Task.MEDIUM_PRIORITY: priorityLabel.text = NSLocalizedString("priorityLabel.text", comment: "") + NSLocalizedString("mediumPriority", comment: "")
+        case Task.LOW_PRIORITY: priorityLabel.text = NSLocalizedString("priorityLabel.text", comment: "") + NSLocalizedString("lowPriority", comment: "")
         default: preconditionFailure("Task must not be nil.")
         }
-        statusLabel.text = NSLocalizedString("ja8-j1-BJ0.text", comment: "") + detailItem!.status.statusDescription
-        descriptionLabel.text = NSLocalizedString("XcE-xy-fWd.text", comment: "") + detailItem!.details
+        statusLabel.text = NSLocalizedString("statusLabel.text", comment: "") + NSLocalizedString(detailItem!.status.statusDescription, comment: "")
+        descriptionLabel.text = NSLocalizedString("descriptionLabel.text", comment: "") + detailItem!.details
         if detailItem!.deadline !=   nil {
             let formatter = DateFormatter()
             formatter.dateStyle = .short
             formatter.timeStyle = .none
-            deadlineLabel.text = NSLocalizedString("aI7-Oa-ORb.text", comment: "") + formatter.string(from: detailItem!.deadline!)
+            deadlineLabel.text = NSLocalizedString("deadlineLabel.text", comment: "") + formatter.string(from: detailItem!.deadline!)
             deadlineLabel.isHidden = false
         } else {
         deadlineLabel.isHidden = true
@@ -77,9 +77,15 @@ class DetailViewController: UIViewController {
         let completeButton = UIBarButtonItem(barButtonSystemItem: .done,  target: self, action: #selector(completeTask(_:)))
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTask(_:)))
 completeButton.accessibilityLabel = NSLocalizedString("completeButton.label", comment: "")
+        completeButton.title = NSLocalizedString("completeButton.label", comment: "")
         completeButton.accessibilityHint = NSLocalizedString("completeButton.hint", comment: "")
         cancelButton.accessibilityLabel = NSLocalizedString("cancelButton.label", comment: "")
+        cancelButton.title = NSLocalizedString("cancelButton.label", comment: "")
         cancelButton.accessibilityHint = NSLocalizedString("cancelButton.hint", comment: "")
+        editButton.accessibilityLabel = NSLocalizedString("editTaskLabel", comment: "")
+        editButton.title = NSLocalizedString("editTaskLabel", comment: "")
+        saveButton.accessibilityLabel = NSLocalizedString("saveTaskLabel", comment: "")
+        saveButton.title = NSLocalizedString("saveTaskLabel", comment: "")
         
         navigationItem.leftBarButtonItems = [saveButton]
         navigationItem.rightBarButtonItems = [editButton, cancelButton, completeButton]

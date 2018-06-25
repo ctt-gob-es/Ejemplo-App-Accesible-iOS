@@ -29,6 +29,7 @@ class DeadlineController: UIViewController, EditTask {
     
     override func viewDidLoad() {
         configureView()
+        task!.deadline = deadlineField.date
     }
     
     @IBAction func deadlineChanged(_ sender: Any) {

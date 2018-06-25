@@ -158,28 +158,57 @@ class MasterViewController: UITableViewController, TaskListDelegate {
         cell.taskName.text = task.name
         switch task.priority {
         case Task.HIGH_PRIORITY: cell.taskName.textColor = UIColor.red
+            //OPCIÓN 1
+            //let imageName = "taskIconHigh.png"
+            //let image = UIImage(named: imageName)
+            //cell.taskStateIcon = UIImageView(image: image!)
+            //cell.taskStateIcon.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
+            //view.addSubview(cell.taskStateIcon)
+        
+            //OPCIÓN 2
+            //cell.taskStateIcon = UIImageView(image: UIImage(named: "taskIconHigh"))
+    
+            cell.taskStateIcon.image = #imageLiteral(resourceName: "taskIconHigh")
+            cell.wraper.accessibilityLabel = NSLocalizedString("highPriority", comment: "")
         case Task.MEDIUM_PRIORITY: cell.taskName.textColor = UIColor.blue
+            cell.taskStateIcon.image = #imageLiteral(resourceName: "taskIcon")
+            cell.wraper.accessibilityLabel = ""
         case Task.LOW_PRIORITY: cell.taskName.textColor = UIColor.magenta
+            cell.taskStateIcon.image = #imageLiteral(resourceName: "taskIconLow")
+            cell.wraper.accessibilityLabel = NSLocalizedString("lowPriority", comment: "")
         default: cell.taskName.textColor = UIColor.blue
+            cell.taskStateIcon.image = #imageLiteral(resourceName: "taskIcon")
+            cell.wraper.accessibilityLabel = ""
         }
         if  task.status is CompletedTask {
             cell.deleteButton.isHidden = true
             cell.completeButton.isHidden = true
-            cell.taskName.textColor = UIColor.green
+            cell.taskName.textColor = UIColor(red:0.24, green:0.38, blue:0.21, alpha:1.0)
+            cell.taskStateIcon.image = #imageLiteral(resourceName: "taskCompletedIcon")
+            cell.wraper.accessibilityLabel = NSLocalizedString("completed", comment: "")
         }
         else if  task.status is CanceledTask {
             cell.deleteButton.isHidden = true
             cell.completeButton.isHidden = true
-            cell.taskName.textColor = UIColor.gray
+            cell.taskName.textColor = UIColor.darkGray
+            cell.taskStateIcon.image = #imageLiteral(resourceName: "stopIcon")
+            cell.wraper.accessibilityLabel = NSLocalizedString("canceled", comment: "")
         }
+        cell.wraper.accessibilityLabel = cell.wraper.accessibilityLabel! + ", " + task.name
         if task.deadline != nil {
             let formatter = DateFormatter()
             formatter.dateStyle = .short
             formatter.timeStyle = .none
-            cell.deadline.text = formatter.string(from: task.deadline!)
+            let dl = formatter.string(from: task.deadline!)
+            cell.deadline.text = dl
+            cell.wraper.accessibilityLabel = cell.wraper.accessibilityLabel! + ", " + dl
         } else {
             cell.deadline.text = ""
         }
+        cell.wraper.isAccessibilityElement = true
+        cell.taskStateIcon.isAccessibilityElement = false
+        cell.taskName.isAccessibilityElement = false
+        cell.deadline.isAccessibilityElement = false
         cell.completeButton.accessibilityLabel = NSLocalizedString("completeButton.label", comment: "")
         cell.completeButton.accessibilityHint = NSLocalizedString("completeButton.hint", comment: "")
         cell.deleteButton.accessibilityLabel = NSLocalizedString("cancelButton.label", comment: "")

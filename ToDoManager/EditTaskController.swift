@@ -55,11 +55,11 @@ class EditTaskController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        titleField.accessibilityLabel = NSLocalizedString("ktD-cR-zOp.text", comment: "Same as title label.")
-        priorityField.accessibilityLabel = NSLocalizedString("ibC-Z4-iZY.text", comment: "Same as priority label.")
-        descriptionField.accessibilityLabel = NSLocalizedString("tFn-fA-zV4.text", comment: "Same as description label.")
-        complexField.accessibilityLabel = NSLocalizedString("q89-Gv-Zik.text", comment: "Same as complex label.")
-        deadlineField.accessibilityLabel = NSLocalizedString("fp9-Y0-WVn.text", comment: "Same as deadline label.")
+        titleField.accessibilityLabel = NSLocalizedString("titleLabel.text", comment: "Same as title label.")
+        priorityField.accessibilityLabel = NSLocalizedString("priorityLabel.text", comment: "Same as priority label.")
+        descriptionField.accessibilityLabel = NSLocalizedString("descriptionLabel.text", comment: "Same as description label.")
+        complexField.accessibilityLabel = NSLocalizedString("isComplexLabel.text", comment: "Same as complex label.")
+        deadlineField.accessibilityLabel = NSLocalizedString("hasDeadlineLabel.text", comment: "Same as deadline label.")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

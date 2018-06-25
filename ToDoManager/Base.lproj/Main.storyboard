@@ -193,7 +193,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFd-nm-Iup">
-                                <rect key="frame" x="29" y="579" width="60" height="30"/>
+                                <rect key="frame" x="37" y="579" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
@@ -201,7 +201,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzP-Uu-uLr">
-                                <rect key="frame" x="84" y="579" width="56" height="30"/>
+                                <rect key="frame" x="146" y="579" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -210,7 +210,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tk0-mH-mVD">
-                                <rect key="frame" x="148" y="579" width="48" height="30"/>
+                                <rect key="frame" x="245" y="579" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
@@ -236,7 +236,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzs-L5-hxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="btt-Ym-35o" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1865" y="128"/>
+            <point key="canvasLocation" x="1864.8" y="127.28635682158921"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -271,36 +271,52 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOw-ei-2mJ">
                                             <rect key="frame" x="16" y="12" width="343" height="68"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-sp-GyP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="271" height="68"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRJ-jg-N8H">
+                                                    <rect key="frame" x="0.0" y="0.0" width="309" height="68"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBU-bZ-00Z">
-                                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subitem 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpa-Xf-zjd">
-                                                            <rect key="frame" x="0.0" y="35" width="78" height="33"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taskIcon.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5YN-iX-kBw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="68"/>
+                                                            <accessibility key="accessibilityConfiguration" label="Task state">
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-sp-GyP">
+                                                            <rect key="frame" x="34" y="0.0" width="275" height="68"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBU-bZ-00Z">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subitem 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpa-Xf-zjd">
+                                                                    <rect key="frame" x="0.0" y="35" width="78" height="33"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-HD-qb8">
-                                                    <rect key="frame" x="271" y="0.0" width="72" height="68"/>
+                                                    <rect key="frame" x="309" y="0.0" width="34" height="68"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-2W-Qii" userLabel="completeButton">
-                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="31"/>
-                                                            <state key="normal" title="Completar"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-2W-Qii" userLabel="completeButton">
+                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="26.5"/>
+                                                            <accessibility key="accessibilityConfiguration" label="completar"/>
+                                                            <state key="normal" image="confirmationIcon.png"/>
                                                             <connections>
                                                                 <action selector="completeTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="dKa-HO-jYh"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq6-Di-4bv">
-                                                            <rect key="frame" x="0.0" y="36" width="72" height="32"/>
-                                                            <state key="normal" title="Borrar"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq6-Di-4bv">
+                                                            <rect key="frame" x="0.0" y="31.5" width="34" height="36.5"/>
+                                                            <accessibility key="accessibilityConfiguration" label="borrar"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="36.5" id="RzD-5v-0DG"/>
+                                                            </constraints>
+                                                            <state key="normal" image="trashIcon.png"/>
                                                             <connections>
                                                                 <action selector="deleteTask:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="nH6-3l-F2G"/>
                                                             </connections>
@@ -323,6 +339,8 @@
                                     <outlet property="deadline" destination="Xpa-Xf-zjd" id="P9b-Lf-Cuk"/>
                                     <outlet property="deleteButton" destination="Xq6-Di-4bv" id="Vqc-Mm-hT2"/>
                                     <outlet property="taskName" destination="mBU-bZ-00Z" id="ei1-b1-dcT"/>
+                                    <outlet property="taskStateIcon" destination="5YN-iX-kBw" id="a41-vS-RPX"/>
+                                    <outlet property="wraper" destination="VRJ-jg-N8H" id="uFm-g3-Xp7"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
@@ -362,7 +380,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bb-24-qI6">
-                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <rect key="frame" x="16" y="20" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -433,20 +451,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0i-nn-Eyt">
-                                <rect key="frame" x="104" y="331" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="HKg-3N-6gB" kind="unwind" unwindAction="cancelWithUnwindSegue:" id="JYd-GH-q7P"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I00-Bq-zll">
-                                <rect key="frame" x="196" y="331" width="36" height="30"/>
+                                <rect key="frame" x="214" y="331" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
                                     <action selector="send:" destination="6Gx-dL-mn4" eventType="touchUpInside" id="qIS-ak-e7L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0i-nn-Eyt">
+                                <rect key="frame" x="96" y="331" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="HKg-3N-6gB" kind="unwind" unwindAction="cancelWithUnwindSegue:" id="JYd-GH-q7P"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -508,7 +526,7 @@
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhA-DB-pD2">
-                                <rect key="frame" x="29" y="579" width="60" height="30"/>
+                                <rect key="frame" x="50" y="579" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
@@ -516,7 +534,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUo-2k-yRh">
-                                <rect key="frame" x="83" y="579" width="59" height="30"/>
+                                <rect key="frame" x="147" y="579" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Previous"/>
                                 <connections>
@@ -524,7 +542,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVO-Mo-jbE">
-                                <rect key="frame" x="148" y="579" width="48" height="30"/>
+                                <rect key="frame" x="254" y="579" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
@@ -546,8 +564,13 @@
             <point key="canvasLocation" x="2812" y="125.4872563718141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="confirmationIcon.png" width="34" height="34"/>
+        <image name="taskIcon.png" width="34" height="34"/>
+        <image name="trashIcon.png" width="34" height="47"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tll-UG-LXB"/>
-        <segue reference="ueJ-lj-v6O"/>
+        <segue reference="6S0-TO-JiA"/>
+        <segue reference="4kF-6Q-l1t"/>
     </inferredMetricsTieBreakers>
 </document>

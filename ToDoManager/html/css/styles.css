@@ -1,4 +1,8 @@
 .large-text {
-font-size: large;
+    font-size: large;
+}
+
+h1, h2, p, li {
+    font-size: 4em;
 }
 

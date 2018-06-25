@@ -21,9 +21,9 @@ class ContactController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        nameField.accessibilityLabel = NSLocalizedString("j0L-Dk-UVr.text", comment: "Same as nameLabel.")
-        emailField.accessibilityLabel = NSLocalizedString("bQT-Ye-t6h.text", comment: "Same as emailLabel.")
-        messageField.accessibilityLabel = NSLocalizedString("FGM-Dk-SJd.text", comment: "Same as messageLabel.")
+        nameField.accessibilityLabel = NSLocalizedString("nameField.label", comment: "Same as nameLabel.")
+        emailField.accessibilityLabel = NSLocalizedString("emailField.label", comment: "Same as emailLabel.")
+        messageField.accessibilityLabel = NSLocalizedString("messageField.label", comment: "Same as messageLabel.")
     }
     
     func validForm()-> Bool {

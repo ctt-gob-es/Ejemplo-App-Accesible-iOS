@@ -24,6 +24,8 @@
 "completeButton.hint" = "Marks the task as completed.";
 "cancelButton.label" = "Cancel";
 "cancelButton.hint" = "Marks the task as cancelled.";
+"editTaskLabel" = "Edit";
+"saveTaskLabel" = "Save";
 "completeDialog.title" = "Confirm";
 "completeDialog.message" = "Are you sure you want to complete this task?";
 "cancelDialog.title" = "Confirm";
@@ -35,3 +37,17 @@
 "preferences" = "Preferences";
 "close" = "Close";
 "helpFilePath" = "help-en";
+"nameField.label" = "Name:";
+"emailField.label" = "Email:";
+"messageField.label" = "Message:";
+"titleLabel.text" = "Title: ";
+"priorityLabel.text" = "Priority: ";
+"descriptionLabel.text" = "Description: ";
+"deadlineLabel.text" = "Deadline: ";
+"completionLabel.text" = "Completion:";
+"statusLabel.text" = "Status: ";
+"isComplexLabel.text" = "Is complex";
+"hasDeadlineLabel.text" = "Has deadline";
+"canceled" = "Canceled";
+"completed" = "Completed";
+"pending" = "Pending";

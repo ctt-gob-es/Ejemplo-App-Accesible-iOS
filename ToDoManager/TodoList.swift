@@ -81,7 +81,7 @@ class TaskStatus {
 class PendingTask: TaskStatus {
     override var statusDescription: String {
         get {
-            return "PENDING_TASK"
+            return "pending"
         }
     }
     override func completeTask(task:Task) {
@@ -96,7 +96,7 @@ class PendingTask: TaskStatus {
 class CompletedTask: TaskStatus {
     override var statusDescription: String {
         get {
-            return "COMPLETED_TASK"
+            return "completed"
         }
     }
     override func completeTask(task: Task) {
@@ -111,7 +111,7 @@ class CompletedTask: TaskStatus {
 class CanceledTask: TaskStatus {
     override var statusDescription: String {
         get {
-            return "CANCELED_TASK"
+            return "canceled"
         }
     }
     override func completeTask(task: Task) {

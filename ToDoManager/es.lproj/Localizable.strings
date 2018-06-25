@@ -24,6 +24,8 @@
 "completeButton.hint" = "Marca la tarea como completada.";
 "cancelButton.label" = "Cancelar";
 "cancelButton.hint" = "Marca la tarea como cancelada.";
+"editTaskLabel" = "Editar";
+"saveTaskLabel" = "Guardar";
 "completeDialog.title" = "Confirmar";
 "completeDialog.message" = "¿Está seguro de que desea completar esta tarea?";
 "cancelDialog.title" = "Confirmar";
@@ -35,3 +37,17 @@
 "preferences" = "Preferencias";
 "close" = "Cerrar";
 "helpFilePath" = "help-es";
+"nameField.label" = "Nombre:";
+"emailField.label" = "Correo electrónico:";
+"messageField.label" = "Mensaje:";
+"titleLabel.text" = "Título: ";
+"priorityLabel.text" = "Prioridad: ";
+"descriptionLabel.text" = "Descripción: ";
+"deadlineLabel.text" = "Fecha límite: ";
+"completionLabel.text" = "Completado:";
+"statusLabel.text" = "Estado: ";
+"isComplexLabel.text" = "Es complejo";
+"hasDeadlineLabel.text" = "Tiene fecha límite";
+"canceled" = "Cancelada";
+"completed" = "Completada";
+"pending" = "Pendiente";
