@@ -28,6 +28,7 @@ class MasterViewController: UITableViewController, TaskListDelegate {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         addButton.accessibilityHint = NSLocalizedString("addTaskHint", comment: "")
         let optionsButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showOptionsMenu(_:)))
+        optionsButton.accessibilityLabel = NSLocalizedString("optionsMenu.Label", comment: "")
         navigationItem.rightBarButtonItem = addButton
         navigationItem.leftBarButtonItem = optionsButton
         if let split = splitViewController {
