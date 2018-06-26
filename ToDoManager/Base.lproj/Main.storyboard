@@ -269,28 +269,28 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOw-ei-2mJ">
-                                            <rect key="frame" x="16" y="12" width="343" height="68"/>
+                                            <rect key="frame" x="16" y="11.5" width="343" height="68.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRJ-jg-N8H">
-                                                    <rect key="frame" x="0.0" y="0.0" width="309" height="68"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="309" height="68.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taskIcon.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5YN-iX-kBw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="68"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="68.5"/>
                                                             <accessibility key="accessibilityConfiguration" label="Task state">
                                                                 <bool key="isElement" value="YES"/>
                                                             </accessibility>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OJs-sp-GyP">
-                                                            <rect key="frame" x="34" y="0.0" width="275" height="68"/>
+                                                            <rect key="frame" x="34" y="0.0" width="275" height="68.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBU-bZ-00Z">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="48.5" height="30.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subitem 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpa-Xf-zjd">
-                                                                    <rect key="frame" x="0.0" y="35" width="78" height="33"/>
+                                                                    <rect key="frame" x="0.0" y="35.5" width="78" height="33"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -300,10 +300,10 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-HD-qb8">
-                                                    <rect key="frame" x="309" y="0.0" width="34" height="68"/>
+                                                    <rect key="frame" x="309" y="0.0" width="34" height="68.5"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-2W-Qii" userLabel="completeButton">
-                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="26.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="27"/>
                                                             <accessibility key="accessibilityConfiguration" label="completar"/>
                                                             <state key="normal" image="confirmationIcon.png"/>
                                                             <connections>
@@ -311,7 +311,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq6-Di-4bv">
-                                                            <rect key="frame" x="0.0" y="31.5" width="34" height="36.5"/>
+                                                            <rect key="frame" x="0.0" y="32" width="34" height="36.5"/>
                                                             <accessibility key="accessibilityConfiguration" label="borrar"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="36.5" id="RzD-5v-0DG"/>
@@ -419,6 +419,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQT-Ye-t6h" userLabel="Email Label">
                                 <rect key="frame" x="28" y="174" width="319" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -433,6 +436,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGM-Dk-SJd" userLabel="Message Label">
                                 <rect key="frame" x="28" y="253" width="319" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -447,6 +453,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0L-Dk-UVr" userLabel="Name Label">
                                 <rect key="frame" x="28" y="94" width="319" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
